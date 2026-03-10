@@ -80,7 +80,7 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2" aria-label="Toggle mobile menu" title="Toggle mobile menu">
                         <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
                     </button>
                 </div>
@@ -283,13 +283,54 @@
     <!-- Leadership Architecture \ Council of Experts -->
     <section class="section-padding bg-gray-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Leadership Architecture</h2>
-                <p class="text-gray-600 text-lg">Kekuatan kami berpusat pada struktur arsitektur kepemimpinan ganda:
-                    Dewan Pengurus eksekutif yang taktis dan <em>Council of Experts</em> yang visioner.</p>
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-4 mb-8 inline-block">Leadership Architecture</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                   <!-- Director -->
+                    <div
+                        class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
+                        <div class="relative">
+                            <img src="https://ui-avatars.com/api/?name=Prof+Abdurrahman&background=1e3a8a&color=fff&size=150"
+                                alt="Andre Fairuz Laode Ngkowe" class="w-24 h-24 rounded-full object-cover">
+                            <div
+                                class="absolute -bottom-2 -right-2 bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-white">
+                                <i class="fa-solid fa-star text-xs"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Andre Fairuz Laode Ngkowe</h4>
+                            <p class="text-primary text-sm font-medium mb-1">Director</p>
+                            <p class="text-gray-500 text-xs">Sebagai Direktur Amarta Artha Institute, Andre Fairuz Laode Ngkowe membawa visi
+                        untuk membangun sebuah institusi yang mampu menjembatani dunia akademik,
+                        industri, dan kebijakan publik. Ia percaya bahwa masa depan organisasi akan ditentukan oleh kemampuan mereka
+                        untuk mengembangkan kepemimpinan yang adaptif, berintegritas, dan berbasis
+                        pengetahuan.Di bawah kepemimpinannya, Amarta Artha Institute berkembang sebagai pusat
+                        pemikiran strategis yang berfokus pada pengembangan kepemimpinan dan inovasi
+                        pengetahuan. </p>
+                        </div>
+                    </div>
+
+                     <!-- Commissioner -->
+                    <div
+                        class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
+                        <div class="relative">
+                            <img src="https://ui-avatars.com/api/?name=Siti+Maimunah&background=d97706&color=fff&size=150"
+                                alt="  Harry Wibisono" class="w-24 h-24 rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">  Harry Wibisono</h4>
+                            <p class="text-primary text-sm font-medium mb-1">Commissioner</p>
+                            <p class="text-gray-500 text-xs"> Sebagai Komisaris,   Harry Wibisono memberikan arah strategis dalam
+                        penguatan tata kelola institusi serta pengembangan kemitraan strategis. Visinya adalah menjadikan Amarta Artha Institute sebagai ruang kolaborasi
+                        antara pemimpin industri, akademisi, dan pembuat kebijakan dalam membangun
+                        masa depan organisasi yang lebih berkelanjutan. </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Council of Expert Grid -->
+            <!-- Council of Experts -->
             <div class="mb-12">
                 <h3 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-4 mb-8 inline-block">The
                     Council of Experts</h3>
@@ -300,17 +341,21 @@
                         class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
                         <div class="relative">
                             <img src="https://ui-avatars.com/api/?name=Prof+Abdurrahman&background=1e3a8a&color=fff&size=150"
-                                alt="Prof Abdurrahman" class="w-24 h-24 rounded-full object-cover">
+                                alt=" Dr. Hendra Kusuma Wardhana, S.H., M.H." class="w-24 h-24 rounded-full object-cover">
                             <div
                                 class="absolute -bottom-2 -right-2 bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-white">
                                 <i class="fa-solid fa-star text-xs"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 text-lg">Prof. Dr. Abdurrahman, SH, LLM.</h4>
-                            <p class="text-primary text-sm font-medium mb-1">Ketua Council / Pakar HTN</p>
-                            <p class="text-gray-500 text-xs">Mantan Hakim Agung, Akademisi Senior Universitas terkemuka
-                                di Indonesia.</p>
+                            <h4 class="font-bold text-gray-900 text-lg"> Dr. Hendra Kusuma Wardhana, S.H., M.H.</h4>
+                             <p class="text-primary text-sm font-medium mb-1">Seorang pakar hukum dan strategi organisasi.</p>
+                            <p class="text-gray-500 text-xs">Seorang pakar hukum dan strategi organisasi yang memiliki pengalaman luas
+                        dalam bidang corporate governance, strategic management, dan business
+                        judgment rule. Pemikirannya berfokus pada bagaimana organisasi dapat membangun sistem
+                        pengambilan keputusan yang kuat, akuntabel, serta selaras dengan prinsip
+                        hukum dan etika bisnis. Ia pernah menjadi Direktur Sumber Daya Manusia PT Timah Tbk dan memegang
+                        berbagai kepemimpinan strategis lainnya. </p>
                         </div>
                     </div>
 
@@ -319,13 +364,15 @@
                         class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
                         <div class="relative">
                             <img src="https://ui-avatars.com/api/?name=Siti+Maimunah&background=d97706&color=fff&size=150"
-                                alt="Siti Maimunah" class="w-24 h-24 rounded-full object-cover">
+                                alt="Harry Wibisono" class="w-24 h-24 rounded-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 text-lg">Siti Maimunah, SH, MCIArb.</h4>
-                            <p class="text-primary text-sm font-medium mb-1">Pakar Arbitrase Internasional</p>
-                            <p class="text-gray-500 text-xs">Partner Senior di Top Tier Law Firm, spesialisasi sengketa
-                                lintas negara.</p>
+                            <h4 class="font-bold text-gray-900 text-lg">Harry Wibisono, SH, MCIArb.</h4>
+                            <p class="text-primary text-sm font-medium mb-1">Ahli dalam bidang management, marketing strategy, dan sales acceleration.</p>
+                            <p class="text-gray-500 text-xs">  Ia membantu organisasi merancang strategi pertumbuhan yang berkelanjutan
+                        melalui pendekatan berbasis data, analisis pasar, dan inovasi model bisnis.Harry Wibisono telah lama berkecimpung dalam dunia manajemen dan strategi
+                        market, salah satunya sejak tahun 2000 sebagai Manajer Marketing
+                        di PT HM Sampoerna Tbk.</p>
                         </div>
                     </div>
 
@@ -334,13 +381,14 @@
                         class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
                         <div class="relative">
                             <img src="https://ui-avatars.com/api/?name=Budi+Wicaksono&background=1e3a8a&color=fff&size=150"
-                                alt="Budi Wicaksono" class="w-24 h-24 rounded-full object-cover">
+                                alt="Mangatas Panjaitan" class="w-24 h-24 rounded-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 text-lg">Budi Wicaksono, SH, MH.</h4>
-                            <p class="text-primary text-sm font-medium mb-1">Pakar Hukum Perbankan & Kurator</p>
-                            <p class="text-gray-500 text-xs">Konsultan Senior restrukturisasi hutang perusahaan BUMN
-                                multinasional.</p>
+                            <h4 class="font-bold text-gray-900 text-lg">Mangatas Panjaitan</h4>
+                            <p class="text-primary text-sm font-medium mb-1">Seorang pakar keuangan dan tata kelola perusahaan</p>
+                            <p class="text-gray-500 text-xs"> Keahliannya membantu organisasi memperkuat sistem pengelolaan keuangan yang
+                        transparan, akuntabel, dan berkelanjutan. Ia pernah menjabat sebagai Direktur Keuangan
+                        PT Transportasi Gas Indonesia.</p>
                         </div>
                     </div>
 
