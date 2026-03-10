@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | LexTraining Institute</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', // Dark blue
+                        secondary: '#d97706', // Gold/Amber
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-padding { @apply py-16 lg:py-24; }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-serif font-bold text-primary flex items-center group">
+                        <i class="fa-solid fa-scale-balanced text-secondary mr-3 text-2xl group-hover:rotate-12 transition duration-300"></i>
+                        LexTraining
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-primary font-medium transition">Beranda</a>
+                    <a href="about.html" class="text-primary font-bold border-b-2 border-primary pb-1 transition">Tentang Kami</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-primary font-medium transition">Portofolio</a>
+                    <a href="index.html#program" class="text-gray-600 hover:text-primary font-medium transition">Program & Konsultasi</a>
+                    <a href="index.html#kontak" class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-comment-dots mr-2"></i>Hubungi Kami
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-gray-100" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
+                <a href="about.html" class="block px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition">Tentang Kami</a>
+                <a href="portfolio.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
+                <a href="index.html#program" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Program & Konsultasi</a>
+                <div class="pt-4 border-t border-gray-100 mt-2">
+                    <a href="index.html#kontak" class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-24 overflow-hidden bg-primary">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" alt="Office Architecture" class="w-full h-full object-cover object-center opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent mix-blend-multiply"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">Mengenal Lebih Dekat <span class="text-secondary">LexTraining</span></h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
+                Menelusuri jejak, filosofi, dan arsitektur kepemimpinan yang membangun integritas institusi kami dalam mencetak profesional hukum terdepan.
+            </p>
+        </div>
+    </header>
+
+    <!-- Overview & Filosofi -->
+    <section class="section-padding bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <!-- Our Identity -->
+                <div class="lg:w-1/2">
+                    <div class="inline-block border border-blue-100 bg-blue-50 text-primary font-bold px-4 py-1.5 rounded-full text-sm mb-6 flex items-center w-max">
+                        <span class="w-2 h-2 rounded-full bg-primary mr-2"></span>Identitas Perusahaan
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Lebih dari Sekadar Pusat Pelatihan</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        LexTraining lahir dari kesadaran mendalam akan kesenjangan antara teori akademik dan tantangan praktik hukum di dunia bisnis modern. Kami hadir sebagai ekosistem pembelajaran yang mentransfusikan pengalaman praktis ke dalam kerangka berpikir strategis.
+                    </p>
+                    
+                    <div class="bg-gray-50 border-l-4 border-secondary p-6 rounded-r-xl mt-8 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-serif"><i class="fa-solid fa-leaf text-secondary mr-2"></i> Filosofi Kami</h3>
+                        <p class="text-gray-600 italic">"Lex Prospicit, Non Respicit" — Hukum melihat ke depan, bukan ke belakang.</p>
+                        <p class="text-gray-600 mt-2">Prinsip ini mencerminkan pendekatan kami dalam mendidik: tidak sekadar menghafal preseden masa lalu, tetapi mempersiapkan kemampuan analitis intuitif untuk mengantisipasi dinamika hukum di masa depan yang sarat akan kompleksitas teknologi dan globalisasi.</p>
+                    </div>
+                </div>
+                
+                <!-- Visi Misi -->
+                <div class="lg:w-1/2 grid gap-6">
+                    <!-- Visi -->
+                    <div class="bg-primary text-white p-8 rounded-2xl shadow-xl relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full z-0 transition group-hover:scale-110 duration-500"></div>
+                        <div class="relative z-10">
+                            <i class="fa-solid fa-eye text-3xl text-secondary mb-4"></i>
+                            <h3 class="text-2xl font-bold font-serif mb-3">Visi Kami</h3>
+                            <p class="text-blue-50 leading-relaxed text-lg">
+                                Menjadi sentrum pemikiran dan pelatihan hukum korporasi nomor satu di Asia Tenggara yang melahirkan praktisi adaptif, beretika luhur, dan berwawasan mitigasi risiko global.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Misi -->
+                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                        <i class="fa-solid fa-bullseye text-3xl text-primary mb-4"></i>
+                        <h3 class="text-2xl font-bold font-serif text-gray-900 mb-4">Misi Strategis</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-secondary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Menyediakan kurikulum berbasis studi kasus empiris dari industri terkini.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-secondary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Menjembatani pakar lintas sektor (regulator, litigator, konsultan) dengan profesional muda.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-secondary mt-1 mr-3"></i>
+                                <span class="text-gray-600">Menanamkan pilar <em>compliance</em> kokoh untuk keberlanjutan bisnis entitas klien.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Pilar Strategi -->
+    <section class="section-padding bg-gray-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Fondasi Eksekusi</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">4 Pilar Strategi <span class="text-primary-light">LexTraining</span></h2>
+                <p class="text-gray-400 text-lg">Pendekatan kami dalam menciptakan transformasi pemahaman hukum bagi setiap klien dan peserta didik dibangun di atas empat pilar utama.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pilar 1 -->
+                <div class="bg-gray-800 border border-gray-700 p-8 rounded-2xl hover:bg-gray-800/80 hover:border-secondary transition duration-300 group">
+                    <div class="w-16 h-16 bg-gray-900 rounded-xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-inner group-hover:scale-110 transition duration-300">
+                        <span class="font-serif font-bold text-3xl text-gray-700 absolute -z-10 opacity-50 -right-2 top-0">01</span>
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Cognitive Agility</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Fokus pada agilitas kognitif. Mengajarkan cara berpikir kritis untuk mencari <em>loophole</em> mitigasi risiko, bukan sekadar penerapan pasal statis.</p>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="bg-gray-800 border border-gray-700 p-8 rounded-2xl hover:bg-gray-800/80 hover:border-secondary transition duration-300 group">
+                    <div class="w-16 h-16 bg-gray-900 rounded-xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-inner group-hover:scale-110 transition duration-300 relative">
+                        <span class="font-serif font-bold text-3xl text-gray-700 absolute -z-10 opacity-50 -right-2 top-0">02</span>
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Immersive Practicality</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Simulasi negosiasi, bedah kasus rill, dan penyusunan kontrak interaktif yang mencerminkan tekanan dan dinamika di lapangan pekerjaan sesungguhnya.</p>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="bg-gray-800 border border-gray-700 p-8 rounded-2xl hover:bg-gray-800/80 hover:border-secondary transition duration-300 group">
+                    <div class="w-16 h-16 bg-gray-900 rounded-xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-inner group-hover:scale-110 transition duration-300 relative">
+                        <span class="font-serif font-bold text-3xl text-gray-700 absolute -z-10 opacity-50 -right-2 top-0">03</span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Uncompromising Ethics</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Integritas sebagai inti. Menanamkan prinsip kepatuhan dan etika kerja yang tidak tergoyahkan guna menjaga nama baik individu maupun korporasi.</p>
+                </div>
+
+                <!-- Pilar 4 -->
+                <div class="bg-gray-800 border border-gray-700 p-8 rounded-2xl hover:bg-gray-800/80 hover:border-secondary transition duration-300 group">
+                    <div class="w-16 h-16 bg-gray-900 rounded-xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-inner group-hover:scale-110 transition duration-300 relative">
+                        <span class="font-serif font-bold text-3xl text-gray-700 absolute -z-10 opacity-50 -right-2 top-0">04</span>
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">Global Benchmarking</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Kurikulum yang secara konstan dikalibrasi ulang terhadap standar regulasi internasional, memberikan peserta keunggulan komparatif di era pasar bebas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Architecture \ Council of Experts -->
+    <section class="section-padding bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Leadership Architecture</h2>
+                <p class="text-gray-600 text-lg">Kekuatan kami berpusat pada struktur arsitektur kepemimpinan ganda: Dewan Pengurus eksekutif yang taktis dan <em>Council of Experts</em> yang visioner.</p>
+            </div>
+
+            <!-- Council of Expert Grid -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-primary border-b-2 border-primary/20 pb-4 mb-8 inline-block">The Council of Experts</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Expert 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
+                        <div class="relative">
+                            <img src="https://ui-avatars.com/api/?name=Prof+Abdurrahman&background=1e3a8a&color=fff&size=150" alt="Prof Abdurrahman" class="w-24 h-24 rounded-full object-cover">
+                            <div class="absolute -bottom-2 -right-2 bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-white"><i class="fa-solid fa-star text-xs"></i></div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Prof. Dr. Abdurrahman, SH, LLM.</h4>
+                            <p class="text-primary text-sm font-medium mb-1">Ketua Council / Pakar HTN</p>
+                            <p class="text-gray-500 text-xs">Mantan Hakim Agung, Akademisi Senior Universitas terkemuka di Indonesia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Expert 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
+                        <div class="relative">
+                            <img src="https://ui-avatars.com/api/?name=Siti+Maimunah&background=d97706&color=fff&size=150" alt="Siti Maimunah" class="w-24 h-24 rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Siti Maimunah, SH, MCIArb.</h4>
+                            <p class="text-primary text-sm font-medium mb-1">Pakar Arbitrase Internasional</p>
+                            <p class="text-gray-500 text-xs">Partner Senior di Top Tier Law Firm, spesialisasi sengketa lintas negara.</p>
+                        </div>
+                    </div>
+
+                    <!-- Expert 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex items-center gap-6 hover:shadow-lg transition">
+                        <div class="relative">
+                            <img src="https://ui-avatars.com/api/?name=Budi+Wicaksono&background=1e3a8a&color=fff&size=150" alt="Budi Wicaksono" class="w-24 h-24 rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Budi Wicaksono, SH, MH.</h4>
+                            <p class="text-primary text-sm font-medium mb-1">Pakar Hukum Perbankan & Kurator</p>
+                            <p class="text-gray-500 text-xs">Konsultan Senior restrukturisasi hutang perusahaan BUMN multinasional.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-8 lg:p-12 mt-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center md:text-right md:border-r border-blue-200 md:pr-8">
+                        <h4 class="text-lg font-bold text-gray-900">Peran Strategic</h4>
+                        <h3 class="text-3xl font-serif text-primary mt-2">Council of Experts</h3>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Kehadiran <em>Council of Experts</em> memastikan kualitas silabus yang diajarkan selalu relevan, kredibel, dan berbobot. Mereka bertugas melakukan asesmen terhadap setiap kurikulum baru, mengawasi standar penugasan, instruktur, serta memberikan advokasi strategis bagi arah pengembangan institusi LexTraining di masa mendatang.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Vision & Why Trust Us -->
+    <section class="section-padding bg-white relative overflow-hidden">
+        <!-- Decor -->
+        <div class="absolute -right-40 top-40 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+        <div class="absolute -left-40 bottom-40 w-96 h-96 bg-yellow-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Future Vision -->
+                <div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h2 class="text-3xl font-serif font-bold text-gray-900">Future Vision</h2>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        Menghadapi Era Society 5.0, LexTraining memproyeksikan transformasi ruang kelas konvensional ke dalam bentuk <strong>LexVirtual Campus</strong>—sebuah ekosistem e-learning interaktif berbasis AI yang mensimulasikan praktik hukum peradilan digital dan <em>Smart Contracts</em>.
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        Kami berambisi menjadi lembaga pertama di Asia Tenggara yang mengintegrasikan pemahaman konseptual Web3, Data Privacy kelas global, dan AI Ethics ke dalam program reguler sertifikasi hukum kami paling lambat tahun 2028.
+                    </p>
+                    <div class="bg-gray-50 border border-gray-100 rounded-xl p-6">
+                        <p class="font-medium text-gray-800 italic">"Mempersiapkan praktisi hukum bukan untuk menyelesaikan masalah hari ini, tetapi mencegah kompleksitas disrupsi hukum hari esok."</p>
+                    </div>
+                </div>
+
+                <!-- Why Trust Us -->
+                <div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white text-xl">
+                            <i class="fa-solid fa-ribbon"></i>
+                        </div>
+                        <h2 class="text-3xl font-serif font-bold text-gray-900">Why Trust Us?</h2>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Point 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-primary flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg mb-1">Akreditasi & Sertifikasi Valid</h4>
+                                <p class="text-gray-600 text-sm">Program kami memiliki izin resmi dan kredibilitas sertifikasi kompetensi yang diakui oleh asosiasi profesi dan industri terkait.</p>
+                            </div>
+                        </div>
+                        <!-- Point 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-primary flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg mb-1">Jejaring Alumni Eksklusif</h4>
+                                <p class="text-gray-600 text-sm">Anda tidak hanya bergabung untuk belajar, tetapi terhubung dalam direktori networking kuat berisi 5,000+ legal manager dan konsultan Indonesia.</p>
+                            </div>
+                        </div>
+                        <!-- Point 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-primary flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg mb-1">Tailor-Made Curriculum</h4>
+                                <p class="text-gray-600 text-sm">Setiap in-house training dirancang khusus setelah proses audit dan assesment masalah legal klien, sehingga materi 100% solutif & aplikatif.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="index.html#kontak" class="mt-10 inline-flex items-center justify-center bg-primary text-white px-8 py-3.5 rounded-full font-bold text-lg hover:bg-blue-900 transition shadow-lg transform hover:-translate-y-1">
+                        Mulai Kolaborasi <i class="fa-solid fa-arrow-right ml-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white pt-16 pb-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-gray-800 pb-10 mb-8 gap-8">
+                <div class="text-center lg:text-left">
+                    <a href="index.html" class="text-3xl font-serif font-bold text-white flex items-center justify-center lg:justify-start mb-4">
+                        <i class="fa-solid fa-scale-balanced mr-3 text-secondary"></i>LexTraining
+                    </a>
+                    <p class="text-gray-400 max-w-md">Menjadi jembatan keilmuan menuju profesionalitas hukum yang mapan dan berintegritas tinggi di Indonesia.</p>
+                </div>
+                
+                <!-- Social Media Shortcuts -->
+                <div class="w-full lg:w-auto bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
+                    <h4 class="text-sm font-bold tracking-widest uppercase text-gray-400 mb-5 text-center lg:text-left">Jejaring Sosial Kami</h4>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-black hover:border-black hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="Twitter X">
+                            <i class="fa-brands fa-x-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-red-600 hover:border-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+                <p>&copy; 2024 LexTraining Institute. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    <a href="#" class="hover:text-secondary transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-secondary transition">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-secondary transition">Peta Situs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script src="js/main.js"></script>
+</body>
+</html>
