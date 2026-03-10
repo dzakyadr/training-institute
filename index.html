@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amarta Artha Institute</title>
-    
+
     <!-- Tailwind CSS (via CDN for simplicity) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom Config for Tailwind -->
     <script>
         tailwind.config = {
@@ -25,15 +26,17 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS Base -->
     <style type="text/tailwindcss">
         @layer utilities {
@@ -44,10 +47,12 @@
         html { scroll-behavior: smooth; }
     </style>
 </head>
+
 <body class="font-sans text-gray-800 antialiased bg-gray-50">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100" id="navbar">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100"
+        id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -56,18 +61,23 @@
                         Amarta Artha Institute
                     </a>
                 </div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-primary font-bold border-b-2 border-primary pb-1 transition">Beranda</a>
-                    <a href="about.html" class="text-gray-600 hover:text-primary font-medium transition">Tentang Kami</a>
-                    <a href="portfolio.html" class="text-gray-600 hover:text-primary font-medium transition">Portofolio</a>
-                    <a href="index.html#program" class="text-gray-600 hover:text-primary font-medium transition">Program & Konsultasi</a>
-                    <a href="index.html#kontak" class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <a href="index.html"
+                        class="text-primary font-bold border-b-2 border-primary pb-1 transition">Beranda</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary font-medium transition">Tentang
+                        Kami</a>
+                    <a href="portfolio.html"
+                        class="text-gray-600 hover:text-primary font-medium transition">Portofolio</a>
+                    <a href="index.html#program" class="text-gray-600 hover:text-primary font-medium transition">Program
+                        & Konsultasi</a>
+                    <a href="index.html#kontak"
+                        class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         <i class="fa-regular fa-comment-dots mr-2"></i>Hubungi Kami
                     </a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2">
@@ -76,49 +86,67 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-gray-100" id="mobile-menu">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition">Beranda</a>
-                <a href="about.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Tentang Kami</a>
-                <a href="portfolio.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
-                <a href="index.html#program" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Program & Konsultasi</a>
+                <a href="index.html"
+                    class="block px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition">Beranda</a>
+                <a href="about.html"
+                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Tentang
+                    Kami</a>
+                <a href="portfolio.html"
+                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
+                <a href="index.html#program"
+                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Program
+                    & Konsultasi</a>
                 <div class="pt-4 border-t border-gray-100 mt-2">
-                    <a href="index.html#kontak" class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi Kami</a>
+                    <a href="index.html#kontak"
+                        class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi
+                        Kami</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Header (Hero Area) -->
-    <header id="beranda" class="relative pt-32 pb-20 lg:pt-48 lg:pb-36 overflow-hidden bg-primary">
+    <header id="beranda" class="relative pt-32 pb-20 lg:pt-48 lg:pb-36 overflow-hidden">
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="landing.jpeg" alt="Landing Page" class="w-full h-full object-cover object-center opacity-30">
-            <div class="absolute inset-0 from-primary via-primary/90 to-blue-900/40 mix-blend-multiply"></div>
+            <img src="landing.jpeg" alt="Landing Page" class="w-full h-full object-cover object-center opacity-100">
         </div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center lg:items-start text-center lg:text-left">
+
+        <div
+            class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div class="lg:w-3/5">
-                <div class="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-blue-100 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+                <div
+                    class="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 text-blue-100 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
                     <span class="w-2 h-2 rounded-full bg-secondary mr-2 animate-pulse"></span>
                     Pendaftaran Dibuka
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
                     Pusat Pelatihan <span class="text-secondary relative whitespace-nowrap">Hukum Profesional
-                        <svg class="absolute w-full h-3 -bottom-1 left-0 text-secondary" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00049 6.84814C53.5136 -1.8959 133.479 -1.61907 197.904 6.84814" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                        <svg class="absolute w-full h-3 -bottom-1 left-0 text-secondary" viewBox="0 0 200 9" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.00049 6.84814C53.5136 -1.8959 133.479 -1.61907 197.904 6.84814"
+                                stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                        </svg>
                     </span>
                 </h1>
                 <p class="text-lg md:text-xl text-blue-50 mb-10 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    Tingkatkan kompetensi hukum Anda bersama para praktisi, negosiator, dan akademisi terdepan. Kurikulum komprehensif yang dirancang untuk membangun karir sukses Anda.
+                    Tingkatkan kompetensi hukum Anda bersama para praktisi, negosiator, dan akademisi terdepan.
+                    Kurikulum komprehensif yang dirancang untuk membangun karir sukses Anda.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#program" class="bg-secondary text-white px-8 py-3.5 rounded-full font-bold text-lg hover:bg-amber-600 transition shadow-lg hover:shadow-xl hover:shadow-secondary/30 transform hover:-translate-y-1">
+                    <a href="#program"
+                        class="bg-secondary text-white px-8 py-3.5 rounded-full font-bold text-lg hover:bg-amber-600 transition shadow-lg hover:shadow-xl hover:shadow-secondary/30 transform hover:-translate-y-1">
                         Lihat Program Baru
                     </a>
-                    <a href="about.html" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3.5 rounded-full font-bold text-lg hover:bg-white/20 transition flex items-center justify-center">
-                        <i class="fa-solid fa-play text-xs mr-3 bg-white text-primary rounded-full w-6 h-6 flex items-center justify-center"></i> Tentang Kami
+                    <a href="about.html"
+                        class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3.5 rounded-full font-bold text-lg hover:bg-white/20 transition flex items-center justify-center">
+                        <i
+                            class="fa-solid fa-play text-xs mr-3 bg-white text-primary rounded-full w-6 h-6 flex items-center justify-center"></i>
+                        Tentang Kami
                     </a>
                 </div>
             </div>
@@ -135,14 +163,22 @@
                 <!-- Image Side -->
                 <div class="lg:w-1/2 relative w-full px-6 lg:px-0">
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl z-10">
-                        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80&w=1000" alt="Institution Profile" class="w-full h-auto transform hover:scale-105 transition duration-700">
+                        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&q=80&w=1000"
+                            alt="Institution Profile"
+                            class="w-full h-auto transform hover:scale-105 transition duration-700">
                     </div>
                     <!-- Decorative Elements -->
-                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
-                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-amber-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
-                    <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl z-20 hidden md:block border border-gray-100">
+                    <div
+                        class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70">
+                    </div>
+                    <div
+                        class="absolute -bottom-6 -right-6 w-48 h-48 bg-amber-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70">
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl z-20 hidden md:block border border-gray-100">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-xl">
+                            <div
+                                class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary text-xl">
                                 <i class="fa-solid fa-award"></i>
                             </div>
                             <div>
@@ -152,17 +188,19 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Content Side -->
                 <div class="lg:w-1/2">
-                    <div class="inline-block border border-blue-100 bg-blue-50 text-primary font-bold px-4 py-1.5 rounded-full text-sm mb-6 flex items-center w-max">
+                    <div
+                        class="inline-block border border-blue-100 bg-blue-50 text-primary font-bold px-4 py-1.5 rounded-full text-sm mb-6 flex items-center w-max">
                         <span class="w-2 h-2 rounded-full bg-primary mr-2"></span>Tentang Hukum UII
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6 leading-tight">Membangun Profesional Hukum yang <span class="text-primary">Berintegritas Tinggi</span></h2>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6 leading-tight">Membangun
+                        Profesional Hukum yang <span class="text-primary">Berintegritas Tinggi</span></h2>
                     <p class="text-gray-600 mb-8 text-lg leading-relaxed">
                         Hukum UII adalah institusi pelatihan dan konsultasi............
                     </p>
-                    
+
                     <!-- Stats Grid -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 pb-10 border-b border-gray-100">
                         <div>
@@ -184,12 +222,14 @@
                     </div>
 
                     <div class="flex items-center gap-4 mt-8">
-                        <a href="about.html" class="text-primary font-bold hover:text-blue-900 transition flex items-center gap-2">
+                        <a href="about.html"
+                            class="text-primary font-bold hover:text-blue-900 transition flex items-center gap-2">
                             Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                     <div class="flex items-center gap-4">
-                        <img src="https://ui-avatars.com/api/?name=Dr+Herman+S&background=1e3a8a&color=fff" alt="CEO" class="w-14 h-14 rounded-full border-2 border-white shadow-md">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Herman+S&background=1e3a8a&color=fff" alt="CEO"
+                            class="w-14 h-14 rounded-full border-2 border-white shadow-md">
                         <div>
                             <p class="font-bold text-gray-900">Dr. xxxx</p>
                             <p class="text-sm text-gray-500">Direktur xxxx</p>
@@ -205,67 +245,95 @@
         <div class="absolute top-0 left-0 w-full h-1/2 bg-white z-0"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-block border border-blue-100 bg-white text-primary font-bold px-4 py-1.5 rounded-full text-sm mb-4">
+                <div
+                    class="inline-block border border-blue-100 bg-white text-primary font-bold px-4 py-1.5 rounded-full text-sm mb-4">
                     Layanan Unggulan Kami
                 </div>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-6">Program & Konsultasi</h2>
-                <p class="text-gray-600 text-lg">Pilih program yang dirancang khusus untuk memenuhi tantangan hukum industri saat ini dan kebutuhan pengembangan karir Anda.</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-6">Program &
+                    Konsultasi</h2>
+                <p class="text-gray-600 text-lg">Pilih program yang dirancang khusus untuk memenuhi tantangan hukum
+                    industri saat ini dan kebutuhan pengembangan karir Anda.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full group">
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full group">
                     <div class="h-56 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition duration-300 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?auto=format&fit=crop&q=80&w=800" alt="Corporate Law" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm"><i class="fa-solid fa-briefcase mr-1"></i> Intensif</div>
+                        <div
+                            class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition duration-300 z-10">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?auto=format&fit=crop&q=80&w=800"
+                            alt="Corporate Law"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-white/95 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm">
+                            <i class="fa-solid fa-briefcase mr-1"></i> Intensif
+                        </div>
                     </div>
                     <div class="p-8 flex-grow flex flex-col">
                         <h3 class="text-xl font-bold text-gray-900 mb-3 font-serif line-clamp-2">Pelatihan</h3>
                         <p class="text-gray-600 mb-8 flex-grow">Pelatihan.....</p>
                         <div class="border-t border-gray-100 pt-6">
-                            <a href="#" class="inline-flex items-center justify-center w-full bg-blue-50 text-primary font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition group-hover:shadow-md">
-                                Lihat <i class="fa-solid fa-arrow-right ml-2 opacity-70 group-hover:translate-x-1 transition"></i>
+                            <a href="#"
+                                class="inline-flex items-center justify-center w-full bg-blue-50 text-primary font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition group-hover:shadow-md">
+                                Lihat <i
+                                    class="fa-solid fa-arrow-right ml-2 opacity-70 group-hover:translate-x-1 transition"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full group">
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full group">
                     <div class="h-56 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition duration-300 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800" alt="Legal Drafting" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm"><i class="fa-solid fa-pen-nib mr-1"></i> Workshop</div>
+                        <div
+                            class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition duration-300 z-10">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+                            alt="Legal Drafting"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 right-4 bg-white/95 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm">
+                            <i class="fa-solid fa-pen-nib mr-1"></i> Workshop
+                        </div>
                     </div>
                     <div class="p-8 flex-grow flex flex-col">
                         <h3 class="text-xl font-bold text-gray-900 mb-3 font-serif line-clamp-2">Workshop</h3>
                         <p class="text-gray-600 mb-8 flex-grow">Workshop...</p>
                         <div class="border-t border-gray-100 pt-6">
-                            <a href="#" class="inline-flex items-center justify-center w-full bg-blue-50 text-primary font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition group-hover:shadow-md">
-                                Lihat<i class="fa-solid fa-arrow-right ml-2 opacity-70 group-hover:translate-x-1 transition"></i>
+                            <a href="#"
+                                class="inline-flex items-center justify-center w-full bg-blue-50 text-primary font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition group-hover:shadow-md">
+                                Lihat<i
+                                    class="fa-solid fa-arrow-right ml-2 opacity-70 group-hover:translate-x-1 transition"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-primary rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-blue-800 flex flex-col h-full relative group">
+                <div
+                    class="bg-primary rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-blue-800 flex flex-col h-full relative group">
                     <!-- Decor -->
                     <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-bl-full z-0"></div>
                     <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-tr-full z-0"></div>
-                    
-                    <div class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm"></div>
-                    
+
+                    <div
+                        class="absolute top-4 right-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm">
+                    </div>
+
                     <div class="p-8 pt-12 flex-grow flex flex-col relative z-10">
-                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-inner border border-white/10">
+                        <div
+                            class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-inner border border-white/10">
                             <i class="fa-solid fa-handshake-angle"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3 font-serif">Konsultasi Hukum</h3>
                         <p class="text-blue-100 mb-8 flex-grow font-light">Sesi pendampingan privat....</p>
                         <div class="border-t border-white/10 pt-6">
-                            <a href="https://wa.me/62xxxxx" class="inline-flex items-center justify-center w-full bg-secondary text-white font-bold py-3 rounded-xl hover:bg-amber-500 transition shadow-lg">
-                                Jadwalkan Sesi <i class="fa-regular fa-calendar-check ml-2"></i> 
+                            <a href="https://wa.me/62xxxxx"
+                                class="inline-flex items-center justify-center w-full bg-secondary text-white font-bold py-3 rounded-xl hover:bg-amber-500 transition shadow-lg">
+                                Jadwalkan Sesi <i class="fa-regular fa-calendar-check ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -278,31 +346,39 @@
     <section id="kontak" class="relative bg-white border-t border-gray-100">
         <div class="flex flex-col lg:flex-row">
             <!-- Info Text -->
-            <div class="lg:w-1/2 p-8 md:p-16 lg:p-24 bg-gray-900 text-white flex flex-col justify-center relative overflow-hidden">
+            <div
+                class="lg:w-1/2 p-8 md:p-16 lg:p-24 bg-gray-900 text-white flex flex-col justify-center relative overflow-hidden">
                 <!-- BG Decor -->
-                <div class="absolute -right-20 top-20 text-[200px] text-gray-800/30 font-serif leading-none select-none pointer-events-none">
+                <div
+                    class="absolute -right-20 top-20 text-[200px] text-gray-800/30 font-serif leading-none select-none pointer-events-none">
                     <i class="fa-solid fa-gavel"></i>
                 </div>
-                
+
                 <div class="relative z-10">
                     <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Contact us</h2>
                     <p class="text-gray-400 text-lg mb-12 leading-relaxed max-w-lg">
-                        Amarta Artha Institute membuka ruang kolaborasi bagi organisasi, institusi, dan para pemimpin yang ingin membangun masa depan melalui kepemimpinan, pengetahuan, dan integritas. 
+                        Amarta Artha Institute membuka ruang kolaborasi bagi organisasi, institusi, dan para pemimpin
+                        yang ingin membangun masa depan melalui kepemimpinan, pengetahuan, dan integritas.
                     </p>
                     <div class="space-y-8">
                         <div class="flex items-start group">
-                            <div class="w-14 h-14 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 mr-5 group-hover:bg-primary group-hover:text-white transition duration-300">
-                                <i class="fa-solid fa-location-dot text-xl text-secondary group-hover:text-white transition"></i>
+                            <div
+                                class="w-14 h-14 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 mr-5 group-hover:bg-primary group-hover:text-white transition duration-300">
+                                <i
+                                    class="fa-solid fa-location-dot text-xl text-secondary group-hover:text-white transition"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg mb-2 text-gray-200">Lokasi Kami</h4>
-                                <p class="text-gray-400 leading-relaxed">Jalan Kaliurang KM 7, Gunung Merbabu,<br>Sleman, Daerah Istimewa Yogyakarta</p>
+                                <p class="text-gray-400 leading-relaxed">Jalan Kaliurang KM 7, Gunung
+                                    Merbabu,<br>Sleman, Daerah Istimewa Yogyakarta</p>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             <div class="flex items-center group">
-                                <div class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 mr-4 group-hover:bg-primary transition duration-300">
-                                    <i class="fa-solid fa-phone text-lg text-secondary group-hover:text-white transition"></i>
+                                <div
+                                    class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 mr-4 group-hover:bg-primary transition duration-300">
+                                    <i
+                                        class="fa-solid fa-phone text-lg text-secondary group-hover:text-white transition"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-sm text-gray-400 mb-1">Telepon</h4>
@@ -310,8 +386,10 @@
                                 </div>
                             </div>
                             <div class="flex items-center group">
-                                <div class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 mr-4 group-hover:bg-primary transition duration-300">
-                                    <i class="fa-solid fa-envelope text-lg text-secondary group-hover:text-white transition"></i>
+                                <div
+                                    class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 mr-4 group-hover:bg-primary transition duration-300">
+                                    <i
+                                        class="fa-solid fa-envelope text-lg text-secondary group-hover:text-white transition"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-sm text-gray-400 mb-1">Email</h4>
@@ -322,15 +400,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Embedded Google Maps -->
             <div class="lg:w-1/2 h-[500px] lg:h-auto min-h-[500px]">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1982.8708749889242!2d110.42374878952808!3d-7.646894393536051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1773157182989!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                    class="w-full h-full border-0" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1982.8708749889242!2d110.42374878952808!3d-7.646894393536051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1773157182989!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="w-full h-full border-0" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
@@ -339,34 +416,46 @@
     <!-- Footer untuk Shortcut Sosmed -->
     <footer class="bg-gray-950 text-white pt-16 pb-8 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-gray-800 pb-10 mb-8 gap-8">
+            <div
+                class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-gray-800 pb-10 mb-8 gap-8">
                 <div class="text-center lg:text-left">
-                    <a class="text-3xl font-serif font-bold text-white flex items-center justify-center lg:justify-start mb-4">
+                    <a
+                        class="text-3xl font-serif font-bold text-white flex items-center justify-center lg:justify-start mb-4">
                         Amarta Artha Institute
                     </a>
-                    <p class="text-gray-400">Begin a Strategic Conversation, setiap transformasi besar selalu dimulai dari sebuah dialog yang bermakna. </p>
+                    <p class="text-gray-400">Begin a Strategic Conversation, setiap transformasi besar selalu dimulai
+                        dari sebuah dialog yang bermakna. </p>
                 </div>
-                
+
                 <!-- Social Media Shortcuts -->
                 <div class="w-full lg:w-auto bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
-                    <h4 class="text-sm font-bold tracking-widest uppercase text-gray-400 mb-5 text-center lg:text-left">Jejaring Sosial Kami</h4>
+                    <h4 class="text-sm font-bold tracking-widest uppercase text-gray-400 mb-5 text-center lg:text-left">
+                        Jejaring Sosial Kami</h4>
                     <div class="flex justify-center space-x-4">
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="LinkedIn">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in text-lg"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-black hover:border-black hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="Twitter X">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-black hover:border-black hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="Twitter X">
                             <i class="fa-brands fa-x-twitter text-lg"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="Instagram">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="Instagram">
                             <i class="fa-brands fa-instagram text-lg"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-red-600 hover:border-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="YouTube">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-red-600 hover:border-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="YouTube">
                             <i class="fa-brands fa-youtube text-lg"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
                 <p>&copy; 2026 Amarta Artha Institute. All rights reserved.</p>
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
@@ -381,4 +470,5 @@
     <!-- JavaScript for Interactions -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
