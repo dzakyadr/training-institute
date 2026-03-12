@@ -37,6 +37,9 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Custom CSS Base -->
     <style type="text/tailwindcss">
         @layer utilities {
@@ -45,6 +48,27 @@
             }
         }
         html { scroll-behavior: smooth; }
+
+        /* Swiper Custom Styles */
+        .homeSwiper {
+            width: 100%;
+            height: 500px;
+            @apply lg:h-[600px];
+        }
+        .homeSwiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            @apply text-white bg-primary/30 backdrop-blur-md w-12 h-12 rounded-full after:text-lg transition-all hover:bg-primary/50;
+        }
+        .swiper-pagination-bullet {
+            @apply bg-white opacity-50 w-3 h-3;
+        }
+        .swiper-pagination-bullet-active {
+            @apply bg-secondary opacity-100;
+        }
     </style>
 </head>
 
@@ -57,21 +81,21 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-2xl font-serif font-bold text-primary flex items-center group">
-                        Amarta Artha Institute
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Amarta Artha Institute" class="h-12 w-auto object-contain">
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#"
+                    <a href="index.html"
                         class="text-primary font-bold border-b-2 border-primary pb-1 transition">Beranda</a>
                     <a href="about.html" class="text-gray-600 hover:text-primary font-medium transition">Tentang
                         Kami</a>
                     <a href="portfolio.html"
                         class="text-gray-600 hover:text-primary font-medium transition">Portofolio</a>
-                    <a href="solutions.html"
-                        class="text-gray-600 hover:text-primary font-medium transition">Program & Konsultasi</a>
+                    <a href="solutions.html" class="text-gray-600 hover:text-primary font-medium transition">Program &
+                        Konsultasi</a>
                     <a href="index.html#kontak"
                         class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         <i class="fa-regular fa-comment-dots mr-2"></i>Hubungi Kami
@@ -80,7 +104,9 @@
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2" aria-label="Toggle mobile menu" title="Toggle mobile menu"><i class="fa-solid fa-bars text-2xl" id="menu-icon"></i> </button>
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2"
+                        aria-label="Toggle mobile menu" title="Toggle mobile menu"><i class="fa-solid fa-bars text-2xl"
+                            id="menu-icon"></i> </button>
                 </div>
             </div>
         </div>
@@ -96,7 +122,8 @@
                 <a href="portfolio.html"
                     class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
                 <a href="solutions.html"
-                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Program & Konsultasi</a>
+                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Program
+                    & Konsultasi</a>
                 <div class="pt-4 border-t border-gray-100 mt-2">
                     <a href="index.html#kontak"
                         class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi
@@ -110,7 +137,8 @@
     <header id="beranda" class="relative pt-32 pb-20 lg:pt-48 lg:pb-36 overflow-hidden">
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="landing.jpeg" alt="Landing Page" class="w-full h-full object-cover object-center opacity-100">
+            <img src="images/landing.jpeg" alt="Landing Page"
+                class="w-full h-full object-cover object-center opacity-100">
         </div>
 
         <div
@@ -131,7 +159,7 @@
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="solutions.html"
                         class="bg-secondary text-white px-8 py-3.5 rounded-full font-bold text-lg hover:bg-amber-600 transition shadow-lg hover:shadow-xl hover:shadow-secondary/30 transform hover:-translate-y-1">
-                        Lihat Program Baru
+                        Lihat Program
                     </a>
                     <a href="about.html"
                         class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3.5 rounded-full font-bold text-lg hover:bg-white/20 transition flex items-center justify-center">
@@ -149,11 +177,16 @@
     <section id="profil" class="section-padding bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Tentang Amarta Artha</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Leadership is not a position, it is a responsibility to the future.</h2>
+                <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Tentang Amarta
+                    Artha</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Leadership is not a position,
+                    it is a responsibility to the future.</h2>
                 <p class="text-gray-600 text-lg">
-                    Amarta Artha Institute adalah sebuah Strategic Leadership Institute dan Research Think Tank yang berfokus pada pengembangan kepemimpinan, riset strategis, serta transformasi organisasi.
-                    <br> <br> Didirikan di Yogyakarta, yaitu sebuah kota yang dikenal sebagai pusat kebudayaan dan intelektualitas Indonesia. Amarta Artha Institute memadukan kearifan lokal dengan perspektif global dalam membangun pendekatan pengembangan manusia dan institusi. 
+                    Amarta Artha Institute adalah sebuah Strategic Leadership Institute dan Research Think Tank yang
+                    berfokus pada pengembangan kepemimpinan, riset strategis, serta transformasi organisasi.
+                    <br> <br> Didirikan di Yogyakarta, yaitu sebuah kota yang dikenal sebagai pusat kebudayaan dan
+                    intelektualitas Indonesia. Amarta Artha Institute memadukan kearifan lokal dengan perspektif global
+                    dalam membangun pendekatan pengembangan manusia dan institusi.
                 </p> <br>
                 <p class="text-black font-bold text-xl font-serif">
                     Kami berperan sebagai:
@@ -163,46 +196,102 @@
             <!-- 4 Cards -->
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Card 1 -->
-                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
-                    
+                <div
+                    class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
+
                     <h3 class="text-2xl font-bold font-serif text-gray-900 mb-4">Strategic Leadership Institute</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Mengembangkan pemimpin masa depan yang mampu menavigasi kompleksitas dunia modern dengan visi, integritas, dan kecerdasan strategis.
+                        Mengembangkan pemimpin masa depan yang mampu menavigasi kompleksitas dunia modern dengan visi,
+                        integritas, dan kecerdasan strategis.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
-                    
+                <div
+                    class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
+
                     <h3 class="text-2xl font-bold font-serif text-gray-900 mb-4">Strategic Think Tank</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Menghasilkan riset berbasis data yang memberikan insight mendalam bagi pengambilan keputusan organisasi dan kebijakan institusional.
+                        Menghasilkan riset berbasis data yang memberikan insight mendalam bagi pengambilan keputusan
+                        organisasi dan kebijakan institusional.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
-                   
+                <div
+                    class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
+
                     <h3 class="text-2xl font-bold font-serif text-gray-900 mb-4">Human Capital Laboratory</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Mengembangkan dan menguji model pengembangan kompetensi yang relevan dengan perubahan teknologi, industri, dan dinamika global.
+                        Mengembangkan dan menguji model pengembangan kompetensi yang relevan dengan perubahan teknologi,
+                        industri, dan dinamika global.
                     </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
-                    
+                <div
+                    class="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-xl transition duration-300 group">
+
                     <h3 class="text-2xl font-bold font-serif text-gray-900 mb-4">Knowledge Ecosystem Builder</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Membangun kolaborasi lintas sektor yaitu dunia akademik, industri, dan kebijakan publik untuk menciptakan inovasi pengetahuan yang berdampak luas.
+                        Membangun kolaborasi lintas sektor yaitu dunia akademik, industri, dan kebijakan publik untuk
+                        menciptakan inovasi pengetahuan yang berdampak luas.
                     </p>
                 </div>
             </div>
             <div class="mt-8">
-                    <a href="about.html" class="text-primary font-bold hover:text-blue-900 transition flex items-center justify-center gap-2">
-                        Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                <a href="about.html"
+                    class="text-primary font-bold hover:text-blue-900 transition flex items-center justify-center gap-2">
+                    Pelajari Lebih Lanjut <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Showcase Carousel -->
+    <section class="relative overflow-hidden bg-white">
+        <div class="swiper homeSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=2000"
+                        alt="Institute Activity 1">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent flex items-center px-8 md:px-24">
+                        <div class="max-w-2xl text-white">
+                            <h3 class="text-3xl md:text-5xl font-serif font-bold mb-4">Strategic Collaboration</h3>
+                            <p class="text-lg md:text-xl font-light opacity-90">Membangun sinergi lintas sektor untuk
+                                inovasi pengetahuan yang berdampak luas.</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000"
+                        alt="Institute Activity 2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent flex items-center px-8 md:px-24">
+                        <div class="max-w-2xl text-white">
+                            <h3 class="text-3xl md:text-5xl font-serif font-bold mb-4">Executive Mentorship</h3>
+                            <p class="text-lg md:text-xl font-light opacity-90">Pendampingan intensif bagi para pemimpin
+                                masa depan dalam menavigasi kompleksitas global.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000"
+                        alt="Institute Activity 3">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent flex items-center px-8 md:px-24">
+                        <div class="max-w-2xl text-white">
+                            <h3 class="text-3xl md:text-5xl font-serif font-bold mb-4">Research Excellence</h3>
+                            <p class="text-lg md:text-xl font-light opacity-90">Think tank strategis dengan riset
+                                berbasis data untuk kebijakan yang bermakna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -221,7 +310,7 @@
                     industri saat ini dan kebutuhan pengembangan karir Anda.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
                 <!-- Card 1 -->
                 <div
                     class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full group">
@@ -238,40 +327,15 @@
                         </div>
                     </div>
                     <div class="p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-serif line-clamp-2">Pelatihan</h3>
-                        <p class="text-gray-600 mb-8 flex-grow">Pelatihan.....</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-serif line-clamp-2">Advisory Board Services
+                        </h3>
+                        <p class="text-gray-600 mb-8 flex-grow"> Keterlibatan pakar kami sebagai dewan penasihat
+                            independen untuk memberikan <em>second-opinion</em> kritis atas inisiatif korporasi.
+                        </p>
                         <div class="border-t border-gray-100 pt-6">
-                            <a href="#"
+                            <a href="https://docs.google.com/forms/"
                                 class="inline-flex items-center justify-center w-full bg-blue-50 text-primary font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition group-hover:shadow-md">
-                                Lihat <i
-                                    class="fa-solid fa-arrow-right ml-2 opacity-70 group-hover:translate-x-1 transition"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col h-full group">
-                    <div class="h-56 overflow-hidden relative">
-                        <div
-                            class="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition duration-300 z-10">
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
-                            alt="Legal Drafting"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div
-                            class="absolute top-4 right-4 bg-white/95 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm">
-                            <i class="fa-solid fa-pen-nib mr-1"></i> Workshop
-                        </div>
-                    </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 font-serif line-clamp-2">Workshop</h3>
-                        <p class="text-gray-600 mb-8 flex-grow">Workshop...</p>
-                        <div class="border-t border-gray-100 pt-6">
-                            <a href="#"
-                                class="inline-flex items-center justify-center w-full bg-blue-50 text-primary font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition group-hover:shadow-md">
-                                Lihat<i
+                                Daftar Sekarang <i
                                     class="fa-solid fa-arrow-right ml-2 opacity-70 group-hover:translate-x-1 transition"></i>
                             </a>
                         </div>
@@ -304,6 +368,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="mt-8">
+                <a href="solutions.html"
+                    class="text-primary font-bold hover:text-blue-900 transition flex items-center justify-center gap-2">
+                    Lainnya<i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -435,6 +505,28 @@
 
     <!-- JavaScript for Interactions -->
     <script src="js/main.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper('.homeSwiper', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>
