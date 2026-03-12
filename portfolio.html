@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Excellence | LexTraining Institute</title>
-    
+    <title>Portfolio | Amarta Artha Institute</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Custom Config -->
     <script>
         tailwind.config = {
@@ -25,67 +26,96 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style type="text/tailwindcss">
         @layer utilities {
             .section-padding { @apply py-16 lg:py-24; }
         }
         html { scroll-behavior: smooth; }
+        
+        /* Swiper Custom Styles */
+        .swiper {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            @apply text-white bg-primary/30 backdrop-blur-sm w-10 h-10 rounded-full after:text-sm;
+        }
+        .swiper-pagination-bullet-active {
+            @apply bg-secondary;
+        }
     </style>
 </head>
+
 <body class="font-sans text-gray-800 antialiased bg-gray-50">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100" id="navbar">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100"
+        id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="text-2xl font-serif font-bold text-primary flex items-center group">
-                        <i class="fa-solid fa-scale-balanced text-secondary mr-3 text-2xl group-hover:rotate-12 transition duration-300"></i>
-                        LexTraining
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Amarta Artha Institute" class="h-12 w-auto object-contain">
                     </a>
                 </div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="index.html" class="text-gray-600 hover:text-primary font-medium transition">Beranda</a>
-                    <a href="about.html" class="text-gray-600 hover:text-primary font-medium transition">Tentang Kami</a>
-                    <a href="portfolio.html" class="text-primary font-bold border-b-2 border-primary pb-1 transition">Portofolio</a>
-                    <a href="solutions.html" class="text-gray-600 hover:text-primary font-medium transition">Solusi</a>
-                    <a href="index.html#program" class="text-gray-600 hover:text-primary font-medium transition">Program & Konsultasi</a>
-                    <a href="index.html#kontak" class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <a href="about.html" class="text-gray-600 hover:text-primary font-medium transition">Tentang
+                        Kami</a>
+                    <a href="portfolio.html"
+                        class="text-primary font-bold border-b-2 border-primary pb-1 transition">Portofolio</a>
+                    <a href="solutions.html" class="text-gray-600 hover:text-primary font-medium transition">Program &
+                        Konsultasi</a>
+                    <a href="index.html#kontak"
+                        class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         <i class="fa-regular fa-comment-dots mr-2"></i>Hubungi Kami
                     </a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2" aria-label="Toggle mobile menu" title="Toggle mobile menu">
-                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
-                    </button>
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2"
+                        aria-label="Toggle mobile menu" title="Toggle mobile menu"><i class="fa-solid fa-bars text-2xl"
+                            id="menu-icon"></i> </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-gray-100" id="mobile-menu">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
-                <a href="about.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Tentang Kami</a>
-                <a href="portfolio.html" class="block px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition">Portofolio</a>
-                <a href="solutions.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Solusi</a>
-                <a href="index.html#program" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Program & Konsultasi</a>
+                <a href="index.html"
+                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
+                <a href="about.html"
+                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Tentang
+                    Kami</a>
+                <a href="portfolio.html"
+                    class="block px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition">Portofolio</a>
+                <a href="solutions.html"
+                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Program
+                    & Konsultasi</a>
                 <div class="pt-4 border-t border-gray-100 mt-2">
-                    <a href="index.html#kontak" class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi Kami</a>
+                    <a href="index.html#kontak"
+                        class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi
+                        Kami</a>
                 </div>
             </div>
         </div>
@@ -94,15 +124,23 @@
     <!-- Page Header -->
     <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-24 overflow-hidden bg-primary">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1505664063603-28e46698170e?auto=format&fit=crop&q=80&w=2000" alt="Portfolio Architecture" class="w-full h-full object-cover object-center opacity-20 filter grayscale">
-            <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent mix-blend-multiply"></div>
+            <img src="https://images.unsplash.com/photo-1505664063603-28e46698170e?auto=format&fit=crop&q=80&w=2000"
+                alt="Portfolio Architecture"
+                class="w-full h-full object-cover object-center opacity-20 filter grayscale">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent mix-blend-multiply">
+            </div>
         </div>
-        
+
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="inline-block border border-white/20 bg-white/10 text-blue-100 backdrop-blur-sm font-medium px-4 py-1.5 rounded-full text-sm mb-6">Jejak Karya & Pengabdian</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">Portfolio <span class="text-secondary">Excellence</span></h1>
+            <span
+                class="inline-block border border-white/20 bg-white/10 text-blue-100 backdrop-blur-sm font-medium px-4 py-1.5 rounded-full text-sm mb-6">Jejak
+                Karya & Pengabdian</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">Portfolio <span
+                    class="text-secondary">Amarta Artha Institute</span></h1>
             <p class="text-xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
-                Reputasi kami dibangun di atas bukti empiris. Berikut adalah sejumlah mahakarya pendampingan strategis dan pencapaian monumental LexTraining bersama mitra korporasi.
+                Reputasi kami dibangun di atas bukti empiris. Berikut adalah sejumlah mahakarya pendampingan strategis
+                dan pencapaian monumental Amarta Artha Institute bersama mitra korporasi.
             </p>
         </div>
     </header>
@@ -110,75 +148,182 @@
     <!-- Portfolio Section -->
     <section class="section-padding bg-gray-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Portfolio 1 -->
-                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-9xl text-gray-50 opacity-50 group-hover:scale-110 transition duration-500 z-0 pointer-events-none font-serif font-black">1</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 shadow-sm border border-blue-100">
-                            <i class="fa-solid fa-building-columns"></i>
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group flex flex-col overflow-hidden">
+                    <!-- Image Carousel -->
+                    <div class="h-64 lg:h-72 relative">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Corporate 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Corporate 2">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Corporate 3">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Corporate Restructuring Excellence</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            Keberhasilan mengawal kompleksitas hukum dalam restrukturisasi korporasi multinasional berskala masif. Kami bertindak sebagai penasihat strategis dalam menyusun skema legal rasionalisasi anak perusahaan yang terintegrasi secara mulus, memitigasi potensi sengketa ketenagakerjaan, serta memastikan kepatuhan penuh terhadap regulasi anti-monopoli lintas yurisdiksi.
-                        </p>
+                    </div>
+
+                    <div class="p-8 lg:p-10 relative">
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 shadow-sm border border-blue-100">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Corporate Restructuring
+                                Excellence</h3>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                Keberhasilan mengawal kompleksitas hukum dalam restrukturisasi korporasi multinasional
+                                berskala masif. Kami bertindak sebagai penasihat strategis dalam menyusun skema legal
+                                rasionalisasi anak perusahaan yang terintegrasi secara mulus.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Portfolio 2 -->
-                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-9xl text-gray-50 opacity-50 group-hover:scale-110 transition duration-500 z-0 pointer-events-none font-serif font-black">2</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-sm border border-amber-100">
-                            <i class="fa-solid fa-scale-unbalanced"></i>
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group flex flex-col overflow-hidden">
+                    <!-- Image Carousel -->
+                    <div class="h-64 lg:h-72 relative">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Litigation 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Litigation 2">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Litigation & Dispute Resolution Mastery</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            Rekam jejak tak terbantahkan dalam mewakili klien korporasi dalam sengketa komersial bernilai tinggi. Kami tak hanya merancang strategi litigasi reaktif yang solid, melainkan proaktif menggunakan <em>Alternative Dispute Resolution</em> (ADR)—mencegah kebocoran finansial besar, merestorasi relasi bisnis yang retak, dan mengamankan kemenangan arbitrase di kancah internasional.
-                        </p>
+                    </div>
+
+                    <div class="p-8 lg:p-10 relative">
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-sm border border-amber-100">
+                                <i class="fa-solid fa-scale-unbalanced"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Litigation & Dispute Resolution
+                                Mastery</h3>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                Rekam jejak tak terbantahkan dalam mewakili klien korporasi dalam sengketa komersial
+                                bernilai tinggi. Kami proaktif menggunakan Alternative Dispute Resolution (ADR)—mencegah
+                                kebocoran finansial besar.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Portfolio 3 -->
-                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-9xl text-gray-50 opacity-50 group-hover:scale-110 transition duration-500 z-0 pointer-events-none font-serif font-black">3</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 shadow-sm border border-blue-100">
-                            <i class="fa-solid fa-list-check"></i>
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group flex flex-col overflow-hidden">
+                    <!-- Image Carousel -->
+                    <div class="h-64 lg:h-72 relative">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Compliance 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1507679799987-c7377ec486b6?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Compliance 2">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Comprehensive Compliance Blueprint</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            Perancangan manual kepatuhan hukum <em>(compliance blueprint)</em> komprehensif bagi konsorsium BUMN dan Perusahaan Terbuka (Tbk). Modul ini meliputi audit investigatif sistem tata kelola lama, hingga penerapan Standar Anti Penyuapan (ISO 37001), Data Privacy, dan ESG <em>(Environmental, Social, and Governance)</em> yang diadaptasi khusus selaras dengan kultur perusahaan Nusantara.
-                        </p>
+                    </div>
+
+                    <div class="p-8 lg:p-10 relative">
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 shadow-sm border border-blue-100">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Comprehensive Compliance
+                                Blueprint</h3>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                Perancangan manual kepatuhan hukum (compliance blueprint) komprehensif bagi konsorsium
+                                BUMN dan Perusahaan Terbuka (Tbk). Penerapan Standar Anti Penyuapan (ISO 37001).
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Portfolio 4 -->
-                <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-9xl text-gray-50 opacity-50 group-hover:scale-110 transition duration-500 z-0 pointer-events-none font-serif font-black">4</div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-sm border border-amber-100">
-                            <i class="fa-solid fa-laptop-code"></i>
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300 group flex flex-col overflow-hidden">
+                    <!-- Image Carousel -->
+                    <div class="h-64 lg:h-72 relative">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Legal Tech 1">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                                        class="w-full h-full object-cover" alt="Legal Tech 2">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Innovative Legal Tech Integration</h3>
-                        <p class="text-gray-600 leading-relaxed text-lg">
-                            Kepeloporan kami memadukan instrumen hukum konvensional dengan teknologi mutakhir. Kami memfasilitasi integrasi infrastruktur <em>e-contracting</em> yang <em>foolproof</em>, automasi audit regulasi berbasis algoritma AI, dan mitigasi sengketa Hak Kekayaan Intelektual digital. Kami mempersenjatai penasihat hukum perusahaan agar menjadi navigator tangguh di era ekosistem siber.
-                        </p>
+                    </div>
+
+                    <div class="p-8 lg:p-10 relative">
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 shadow-sm border border-amber-100">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Innovative Legal Tech
+                                Integration</h3>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                Kepeloporan kami memadukan instrumen hukum konvensional dengan teknologi mutakhir.
+                                Integrasi infrastruktur e-contracting yang foolproof dan automasi audit AI.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
 
     <!-- Call to Action -->
     <section class="section-padding bg-primary text-white relative border-t-8 border-secondary">
-        <div class="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+        <div
+            class="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10">
+        </div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight">Jadilah Bagian dari Portofolio Kesuksesan Kami Berikutnya</h2>
-            <p class="text-blue-100 text-xl font-light mb-10 max-w-2xl mx-auto">Kami mengundang institusi Anda berdiskusi merumuskan cetak biru mitigasi hukum terbaik.</p>
-            <a href="index.html#kontak" class="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-amber-500 transition shadow-xl transform hover:-translate-y-1">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight">Jadilah Bagian dari Portofolio
+                Kesuksesan Kami Berikutnya</h2>
+            <p class="text-blue-100 text-xl font-light mb-10 max-w-2xl mx-auto">Kami mengundang institusi Anda
+                berdiskusi merumuskan cetak biru mitigasi hukum terbaik.</p>
+            <a href="index.html#kontak"
+                class="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-amber-500 transition shadow-xl transform hover:-translate-y-1">
                 Jadwalkan Diskusi Eksklusif
             </a>
         </div>
@@ -187,36 +332,48 @@
     <!-- Footer -->
     <footer class="bg-gray-950 text-white pt-16 pb-8 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-gray-800 pb-10 mb-8 gap-8">
+            <div
+                class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-gray-800 pb-10 mb-8 gap-8">
                 <div class="text-center lg:text-left">
-                    <a href="index.html" class="text-3xl font-serif font-bold text-white flex items-center justify-center lg:justify-start mb-4">
-                        <i class="fa-solid fa-scale-balanced mr-3 text-secondary"></i>LexTraining
+                    <a
+                        class="text-3xl font-serif font-bold text-white flex items-center justify-center lg:justify-start mb-4">
+                        Amarta Artha Institute
                     </a>
-                    <p class="text-gray-400 max-w-md">Menjadi jembatan keilmuan menuju profesionalitas hukum yang mapan dan berintegritas tinggi di Indonesia.</p>
+                    <p class="text-gray-400">Begin a Strategic Conversation, setiap transformasi besar selalu dimulai
+                        dari sebuah dialog yang bermakna. </p>
                 </div>
-                
+
                 <!-- Social Media Shortcuts -->
                 <div class="w-full lg:w-auto bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
-                    <h4 class="text-sm font-bold tracking-widest uppercase text-gray-400 mb-5 text-center lg:text-left">Jejaring Sosial Kami</h4>
+                    <h4 class="text-sm font-bold tracking-widest uppercase text-gray-400 mb-5 text-center lg:text-left">
+                        Jejaring Sosial Kami</h4>
                     <div class="flex justify-center space-x-4">
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="LinkedIn">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in text-lg"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-black hover:border-black hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="Twitter X">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-black hover:border-black hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="Twitter X">
                             <i class="fa-brands fa-x-twitter text-lg"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="Instagram">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="Instagram">
                             <i class="fa-brands fa-instagram text-lg"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-red-600 hover:border-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm" aria-label="YouTube">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-red-600 hover:border-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="YouTube">
                             <i class="fa-brands fa-youtube text-lg"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
-                <p>&copy; 2024 LexTraining Institute. All rights reserved.</p>
+                <p>&copy; 2026 Amarta Artha Institute. All rights reserved.</p>
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
                     <a href="#" class="hover:text-secondary transition">Kebijakan Privasi</a>
                     <a href="#" class="hover:text-secondary transition">Syarat & Ketentuan</a>
@@ -228,5 +385,24 @@
 
     <!-- JavaScript for Interactions -->
     <script src="js/main.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
+
 </html>
