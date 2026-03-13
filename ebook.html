@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBook | Amarta Artha Institute</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#376171', // Dark Slate (Tegas & Berwibawa)
+                        secondary: '#ffb933', // Medium Slate (Profesional & Modern)
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-padding { @apply py-16 lg:py-24; }
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Amarta Artha Institute" class="h-12 w-auto object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-primary font-medium transition">Beranda</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary font-medium transition">Tentang Kami</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-primary font-medium transition">Portofolio</a>
+                    <div class="relative group">
+                        <button class="text-primary font-bold border-b-2 border-primary pb-1 transition flex items-center gap-1">
+                            eBook <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
+                            <a href="solutions.html" class="block px-4 py-3 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 transition rounded-t-lg">Services</a>
+                            <a href="ebook.html" class="block px-4 py-3 text-sm text-primary font-bold bg-blue-50 transition rounded-b-lg">eBook</a>
+                        </div>
+                    </div>
+                    <a href="index.html#kontak"
+                        class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <i class="fa-regular fa-comment-dots mr-2"></i>Hubungi Kami
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2"
+                        aria-label="Toggle mobile menu" title="Toggle mobile menu"><i class="fa-solid fa-bars text-2xl"
+                            id="menu-icon"></i> </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-gray-100" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
+                <a href="about.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Tentang Kami</a>
+                <a href="portfolio.html" class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
+                <div class="group">
+                    <button class="w-full text-left px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition flex justify-between items-center">
+                        eBook <i class="fa-solid fa-chevron-down text-xs transition duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="hidden group-hover:block pl-4 mt-1 space-y-1">
+                        <a href="solutions.html" class="block px-3 py-2 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition">Services</a>
+                        <a href="ebook.html" class="block px-3 py-2 text-sm text-primary font-bold bg-blue-50 rounded-lg transition">eBook</a>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-gray-100 mt-2">
+                    <a href="index.html#kontak"
+                        class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="flex-grow pt-32 pb-20 flex flex-col items-center justify-center text-center px-4">
+        <div class="max-w-2xl mx-auto">
+            <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center text-primary text-4xl mx-auto mb-6 shadow-inner border border-blue-100">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-6">eBook</h1>
+            <p class="text-xl text-gray-600 font-light leading-relaxed mb-8">
+                Belum tersedia saat ini
+            </p>
+            <a href="index.html" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-blue-900 transition shadow-lg transform hover:-translate-y-1">
+                Kembali ke Beranda
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white pt-16 pb-8 border-t border-gray-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-gray-800 pb-10 mb-8 gap-8">
+                <div class="text-center lg:text-left">
+                    <a
+                        class="text-3xl font-serif font-bold text-white flex items-center justify-center lg:justify-start mb-4">
+                        Amarta Artha Institute
+                    </a>
+                    <p class="text-gray-400">Begin a Strategic Conversation, setiap transformasi besar selalu dimulai
+                        dari sebuah dialog yang bermakna. </p>
+                </div>
+
+                <!-- Social Media Shortcuts -->
+                <div class="w-full lg:w-auto bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
+                    <h4 class="text-sm font-bold tracking-widest uppercase text-gray-400 mb-5 text-center lg:text-left">
+                        Jejaring Sosial Kami</h4>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-blue-600 hover:border-blue-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-black hover:border-black hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="Twitter X">
+                            <i class="fa-brands fa-x-twitter text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-300 hover:bg-red-600 hover:border-red-600 hover:text-white hover:scale-110 transition duration-300 shadow-sm"
+                            aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+                <p>&copy; 2026 Amarta Artha Institute. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    <a href="#" class="hover:text-secondary transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-secondary transition">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-secondary transition">Peta Situs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
