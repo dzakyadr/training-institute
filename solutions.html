@@ -150,31 +150,44 @@
                     class="text-secondary">Solutions</span></h1>
 
             <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#capacity-building"
+                <a href="#program-utama"
                     class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-full font-medium hover:bg-white/20 transition">
-                    Strategic Capacity Building
+                    Program Utama
                 </a>
-                <a href="#executive-mentorship"
+                <a href="#layanan-konsultasi"
                     class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-full font-medium hover:bg-white/20 transition">
-                    Executive Mentorship
+                    Layanan Konsultasi
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Main Content: Two-Column Layout -->
-    <section class="section-padding bg-gray-50 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-0 lg:gap-10">
+    <!-- Section: Our Solutions (Dual Container Design) -->
+    <section class="section-padding mt-20 lg:mt-0 bg-gray-50 relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
+            <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl"></div>
+        </div>
 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Program Label -->
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">Layanan
+                    Kami</span>
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">Daftar Program Utama</h2>
+                <div class="w-16 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
                 <!-- ==========================================
-                     LEFT COLUMN: Strategic Capacity Building
+                     CONTAINER 1: Strategic Capacity Building
                      ========================================== -->
-                <div id="capacity-building" class="py-8 lg:py-0 lg:pr-8 lg:border-r border-gray-200">
+                <div id="program-utama"
+                    class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/50 flex flex-col">
                     <!-- Section Header -->
                     <div class="mb-10">
-                        <span class="inline-block text-xs font-bold tracking-widest uppercase text-secondary mb-3">Pilar
-                            Pertama</span>
                         <h2 class="text-3xl font-serif font-bold text-gray-900 mb-5 leading-tight">
                             Strategic Capacity Building
                         </h2>
@@ -275,21 +288,23 @@
                                     lebih lanjut <i class="fa-solid fa-arrow-right text-xs"></i></span>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="mt-12 pt-8 border-t border-gray-100/50">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScUq6O-Vz7U.../viewform" target="_blank"
+                            class="flex items-center justify-center gap-3 w-full py-4 bg-secondary text-white font-bold rounded-2xl hover:bg-secondary-dark transition-all transform hover:-translate-y-1 shadow-lg shadow-secondary/20 group">
+                            Daftar Pelatihan Sekarang
+                            <i class="fa-solid fa-file-signature group-hover:rotate-12 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Divider for mobile -->
-                <div class="block lg:hidden border-t border-gray-200 my-6"></div>
-
                 <!-- ==========================================
-                     RIGHT COLUMN: Executive Mentorship
+                     CONTAINER 2: Executive Mentorship
                      ========================================== -->
-                <div id="executive-mentorship" class="py-8 lg:py-0 lg:pl-4">
-                    <!-- Section Header -->
+                <div id="program-utama"
+                    class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/50 flex flex-col">
+                    <!-- Pillar Header -->
                     <div class="mb-10">
-                        <span class="inline-block text-xs font-bold tracking-widest uppercase text-secondary mb-3">Pilar
-                            Kedua</span>
                         <h2 class="text-3xl font-serif font-bold text-gray-900 mb-5 leading-tight">
                             Executive Mentorship
                         </h2>
@@ -353,9 +368,7 @@
                             <p class="text-sm text-gray-500 leading-relaxed flex-grow">Riset mendalam berbasis data
                                 untuk mendukung arah strategis pemimpin dan organisasi.</p>
                         </div>
-
                     </div>
-
                     <!-- Single Research Card -->
                     <div class="bg-primary text-white rounded-2xl p-7 shadow-lg relative overflow-hidden">
                         <div class="absolute -top-6 -right-6 text-white/5 text-[9rem] leading-none pointer-events-none">
@@ -382,6 +395,100 @@
                         </ul>
                     </div>
 
+                    <!-- CTA Button -->
+                    <div class="mt-12 pt-8 border-t border-gray-100/50">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScUq6O-Vz7U.../viewform" target="_blank"
+                            class="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white font-bold rounded-2xl hover:bg-primary-dark transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 group">
+                            Bergabung Executive Mentorship
+                            <i
+                                class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 SECTION: KONSULTASI SERVICES
+                 ========================================== -->
+            <div id="layanan-konsultasi" class="mt-20 pt-20 border-t border-gray-300">
+                <!-- Consultation Label -->
+                <div class="text-center mb-16">
+                    <span class="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">Strategic
+                        Advice</span>
+                    <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">Layanan Konsultasi</h2>
+                    <div class="w-16 h-1 bg-secondary mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+                    <!-- Consultation 1: Umum -->
+                    <div id="konsultasi-umum"
+                        class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/50 flex flex-col">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Konsultasi Umum</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Memberikan panduan strategis dan solusi praktis untuk tantangan manajemen sehari-hari
+                                serta pengembangan ekosistem organisasi secara menyeluruh.
+                            </p>
+                        </div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-secondary mt-1"></i>
+                                <span class="text-sm text-gray-500">Analisis Problematika Organisasi</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-secondary mt-1"></i>
+                                <span class="text-sm text-gray-500">Strategi Kolaborasi Tim</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-secondary mt-1"></i>
+                                <span class="text-sm text-gray-500">Optimasi Budaya Kerja</span>
+                            </li>
+                        </ul>
+                        <!-- WA Button -->
+                        <div class="mt-auto pt-8 border-t border-gray-100/50">
+                            <a href="https://wa.me/628117897512" target="_blank"
+                                class="flex items-center justify-center gap-3 w-full py-4 bg-[#25D366] text-white font-bold rounded-2xl hover:bg-[#128C7E] transition-all transform hover:-translate-y-1 shadow-lg shadow-green-500/20 group">
+                                Konsultasi Umum via WhatsApp
+                                <i
+                                    class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Consultation 2: Khusus -->
+                    <div id="konsultasi-khusus"
+                        class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100/50 flex flex-col">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 mb-4">Konsultasi Khusus</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Pendampingan eksklusif untuk perancangan kebijakan strategis, restrukturisasi
+                                institusonal, dan penyelarasan tata kelola berbasis data.
+                            </p>
+                        </div>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span class="text-sm text-gray-500">Desain Tata Kelola (Governance)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span class="text-sm text-gray-500">Restrukturisasi Organisasi</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span class="text-sm text-gray-500">Penyusunan Roadmap Strategis</span>
+                            </li>
+                        </ul>
+                        <!-- WA Button -->
+                        <div class="mt-auto pt-8 border-t border-gray-100/50">
+                            <a href="https://wa.me/628117897512" target="_blank"
+                                class="flex items-center justify-center gap-3 w-full py-4 bg-[#25D366] text-white font-bold rounded-2xl hover:bg-[#128C7E] transition-all transform hover:-translate-y-1 shadow-lg shadow-green-500/20 group">
+                                Konsultasi Khusus via WhatsApp
+                                <i
+                                    class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
