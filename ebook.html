@@ -8,20 +8,54 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- Tailwind CSS -->
+        <!-- Tailwind CSS (via CDN for simplicity) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Config -->
+    <!-- Global CSS for Design System -->
+    <link rel="stylesheet" href="css/global.css">
+
+            <!-- Custom Config for Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#376171', // Dark Slate (Tegas & Berwibawa)
-                        secondary: '#ffb933', // Medium Slate (Profesional & Modern)
+                        slate: {
+                            900: '#1A1F2E',
+                            700: '#2C3444',
+                            500: '#4A5568',
+                            300: '#8896A8',
+                            100: '#EDE8DE',
+                        },
+                        sage: {
+                            700: '#A08045',
+                            500: '#C8A96E',
+                            300: '#E8D5A3',
+                            100: '#F5EDD6',
+                        },
+                        surface: {
+                            base: '#FDFAF5',
+                            soft: '#F5F0E8',
+                            muted: '#EDE8DE',
+                        },
+                        customBorder: {
+                            default: 'rgba(26, 31, 46, 0.1)',
+                            strong: 'rgba(26, 31, 46, 0.22)',
+                        }
                     },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                        serif: ['Poppins', 'sans-serif'],
+                                        fontFamily: {
+                        sans: ['"Poppins"', 'sans-serif'],
+                        serif: ['"Poppins"', 'sans-serif'],
+                        display: ['"Poppins"', 'sans-serif'],
+                        body: ['"Poppins"', 'sans-serif']
+                    },
+borderRadius: {
+                        card: '2px',
+                        btn: '3px'
+                    },
+                    boxShadow: {
+                        'premium': '0px 0px 0px 1px rgba(26, 31, 46, 0.06), 0px 1px 2px -1px rgba(26, 31, 46, 0.06), 0px 2px 4px 0px rgba(26, 31, 46, 0.04)',
+                        'premium-hover': '0px 0px 0px 1px rgba(26, 31, 46, 0.08), 0px 1px 2px -1px rgba(26, 31, 46, 0.08), 0px 2px 4px 0px rgba(26, 31, 46, 0.06)',
                     }
                 }
             }
@@ -45,10 +79,10 @@
     </style>
 </head>
 
-<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+<body class="font-sans text-slate-900 antialiased bg-surface-base flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100"
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-customBorder-default"
         id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
@@ -62,33 +96,33 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-gray-600 hover:text-primary font-medium transition">Beranda</a>
-                    <a href="about.html" class="text-gray-600 hover:text-primary font-medium transition">Tentang
+                    <a href="index.html" class="text-slate-500 hover:text-slate-900 font-medium transition">Beranda</a>
+                    <a href="about.html" class="text-slate-500 hover:text-slate-900 font-medium transition">Tentang
                         Kami</a>
                     <a href="portfolio.html"
-                        class="text-gray-600 hover:text-primary font-medium transition">Portofolio</a>
+                        class="text-slate-500 hover:text-slate-900 font-medium transition">Portofolio</a>
                     <div class="relative group">
                         <button
-                            class="text-primary font-bold border-b-2 border-primary pb-1 transition flex items-center gap-1">
+                            class="text-slate-900 font-medium border-b-2 border-slate-900 pb-1 transition flex items-center gap-1">
                             e-Book <i class="fa-solid fa-chevron-down text-xs"></i>
                         </button>
                         <div
-                            class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
+                            class="absolute left-0 mt-2 w-48 bg-white border border-customBorder-default rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
                             <a href="solutions.html"
-                                class="block px-4 py-3 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 transition rounded-t-lg">Services</a>
+                                class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-blue-50 transition rounded-t-lg">Layanan</a>
                             <a href="ebook.html"
-                                class="block px-4 py-3 text-sm text-primary font-bold bg-blue-50 transition rounded-b-lg">e-Book</a>
+                                class="block px-4 py-3 text-sm text-slate-900 font-medium bg-blue-50 transition rounded-b-lg">e-Book</a>
                         </div>
                     </div>
                     <a href="index.html#kontak"
-                        class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         <i class="fa-regular fa-comment-dots mr-2"></i>Hubungi Kami
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2"
+                    <button id="mobile-menu-button" class="text-slate-500 hover:text-slate-900 focus:outline-none p-2"
                         aria-label="Toggle mobile menu" title="Toggle mobile menu"><i class="fa-solid fa-bars text-2xl"
                             id="menu-icon"></i> </button>
                 </div>
@@ -96,31 +130,31 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-gray-100" id="mobile-menu">
+        <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-customBorder-default" id="mobile-menu">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="index.html"
-                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
+                    class="block px-3 py-3 text-slate-800 hover:text-slate-900 hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
                 <a href="about.html"
-                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Tentang
+                    class="block px-3 py-3 text-slate-800 hover:text-slate-900 hover:bg-blue-50 rounded-lg font-medium transition">Tentang
                     Kami</a>
                 <a href="portfolio.html"
-                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
+                    class="block px-3 py-3 text-slate-800 hover:text-slate-900 hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
                 <div class="group">
                     <button
-                        class="w-full text-left px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition flex justify-between items-center">
+                        class="w-full text-left px-3 py-3 text-slate-900 bg-blue-50 rounded-lg font-medium transition flex justify-between items-center">
                         e-Book <i
                             class="fa-solid fa-chevron-down text-xs transition duration-300 group-hover:rotate-180"></i>
                     </button>
                     <div class="hidden group-hover:block pl-4 mt-1 space-y-1">
                         <a href="solutions.html"
-                            class="block px-3 py-2 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition">Services</a>
+                            class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-blue-50 rounded-lg transition">Layanan</a>
                         <a href="ebook.html"
-                            class="block px-3 py-2 text-sm text-primary font-bold bg-blue-50 rounded-lg transition">e-Book</a>
+                            class="block px-3 py-2 text-sm text-slate-900 font-medium bg-blue-50 rounded-lg transition">e-Book</a>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-gray-100 mt-2">
+                <div class="pt-4 border-t border-customBorder-default mt-2">
                     <a href="index.html#kontak"
-                        class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi
+                        class="block text-center bg-slate-900 text-white px-3 py-3 rounded-lg font-medium shadow-md">Hubungi
                         Kami</a>
                 </div>
             </div>
@@ -131,37 +165,37 @@
     <main class="flex-grow pt-40 pb-20 flex flex-col items-center justify-center text-center px-4">
         <div class="max-w-2xl mx-auto">
             <div
-                class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center text-primary text-4xl mx-auto mb-6 shadow-inner border border-blue-100">
+                class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center text-slate-900 text-4xl mx-auto mb-6 shadow-inner border border-blue-100">
                 <i class="fa-solid fa-book-open"></i>
             </div>
-            <h1 class="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-6">e-Book</h1>
-            <p class="text-xl text-gray-600 font-light leading-relaxed mb-8">
+            <h1 class="text-3xl md:text-5xl font-display font-medium text-slate-900 mb-6">e-Book</h1>
+            <p class="text-xl text-slate-500 font-light leading-relaxed mb-8">
                 Belum tersedia saat ini
             </p>
             <a href="index.html"
-                class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-blue-900 transition shadow-lg transform hover:-translate-y-1">
+                class="inline-block bg-slate-900 text-white px-8 py-3 rounded-full font-medium text-sm hover:bg-blue-900 transition shadow-lg transform hover:-translate-y-1">
                 Kembali ke Beranda
             </a>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 text-white pt-16 pb-8 border-t border-gray-900 mt-auto">
+    <footer class="bg-slate-900 text-white pt-16 pb-8 border-t border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
-                class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-gray-800 pb-10 mb-8 gap-8">
+                class="flex flex-col lg:flex-row justify-between items-center lg:items-end border-b border-slate-700 pb-10 mb-8 gap-8">
                 <div class="text-center lg:text-left">
                     <a
-                        class="text-3xl font-serif font-bold text-white flex items-center justify-center lg:justify-start mb-4">
+                        class="text-3xl font-display font-medium text-white flex items-center justify-center lg:justify-start mb-4">
                         Amarta Artha Institute
                     </a>
-                    <p class="text-gray-400">Begin a Strategic Conversation, setiap transformasi besar selalu dimulai
+                    <p class="text-slate-400">Begin a Strategic Conversation, setiap transformasi besar selalu dimulai
                         dari sebuah dialog yang bermakna. </p>
                 </div>
 
                 <!-- Social Media Shortcuts -->
-                <div class="w-full lg:w-auto bg-gray-900/50 p-6 rounded-2xl border border-gray-800">
-                    <h4 class="text-sm font-bold tracking-widest uppercase text-gray-400 mb-5 text-center lg:text-left">
+                <div class="w-full lg:w-auto bg-gray-900/50 p-6 rounded-2xl border border-slate-700">
+                    <h4 class="text-sm font-medium tracking-widest uppercase text-slate-400 mb-5 text-center lg:text-left">
                         Jejaring Sosial Kami</h4>
                     <div class="flex justify-center space-x-4">
                         <a href="#"
@@ -188,12 +222,12 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400 gap-4">
                 <p>&copy; 2026 Amarta Artha Institute. All rights reserved.</p>
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                    <a href="#" class="hover:text-secondary transition">Kebijakan Privasi</a>
-                    <a href="#" class="hover:text-secondary transition">Syarat & Ketentuan</a>
-                    <a href="#" class="hover:text-secondary transition">Peta Situs</a>
+                    <a href="#" class="hover:text-sage-500 transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-sage-500 transition">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-sage-500 transition">Peta Situs</a>
                 </div>
             </div>
         </div>

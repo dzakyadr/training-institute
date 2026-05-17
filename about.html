@@ -1,31 +1,58 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
+<!DOCTYPE html><html lang="id"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Kami | Amarta Artha Institute</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- Tailwind CSS -->
+        <!-- Tailwind CSS (via CDN for simplicity) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Config -->
+    <!-- Global CSS for Design System -->
+    <link rel="stylesheet" href="css/global.css">
+
+            <!-- Custom Config for Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#376171', // Dark Slate (Tegas & Berwibawa)
-                        secondary: '#ffb933', // Medium Slate (Profesional & Modern)
+                        slate: {
+                            900: '#1A1F2E',
+                            700: '#2C3444',
+                            500: '#4A5568',
+                            300: '#8896A8',
+                            100: '#EDE8DE',
+                        },
+                        sage: {
+                            700: '#A08045',
+                            500: '#C8A96E',
+                            300: '#E8D5A3',
+                            100: '#F5EDD6',
+                        },
+                        surface: {
+                            base: '#FDFAF5',
+                            soft: '#F5F0E8',
+                            muted: '#EDE8DE',
+                        },
+                        customBorder: {
+                            default: 'rgba(26, 31, 46, 0.1)',
+                            strong: 'rgba(26, 31, 46, 0.22)',
+                        }
                     },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                        serif: ['Poppins', 'sans-serif'],
+                                        fontFamily: {
+                        sans: ['"Poppins"', 'sans-serif'],
+                        serif: ['"Poppins"', 'sans-serif'],
+                        display: ['"Poppins"', 'sans-serif'],
+                        body: ['"Poppins"', 'sans-serif']
+                    },
+borderRadius: {
+                        card: '2px',
+                        btn: '3px'
                     },
                     boxShadow: {
-                        'premium': '0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px -1px rgba(0, 0, 0, 0.06), 0px 2px 4px 0px rgba(0, 0, 0, 0.04)',
-                        'premium-hover': '0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px 0px rgba(0, 0, 0, 0.06)',
+                        'premium': '0px 0px 0px 1px rgba(26, 31, 46, 0.06), 0px 1px 2px -1px rgba(26, 31, 46, 0.06), 0px 2px 4px 0px rgba(26, 31, 46, 0.04)',
+                        'premium-hover': '0px 0px 0px 1px rgba(26, 31, 46, 0.08), 0px 1px 2px -1px rgba(26, 31, 46, 0.08), 0px 2px 4px 0px rgba(26, 31, 46, 0.06)',
                     }
                 }
             }
@@ -34,9 +61,8 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -69,11 +95,9 @@
         .delay-400 { transition-delay: 400ms; }
 
         /* Component Transitions */
-        .card-premium {
-            @apply shadow-premium bg-white border border-gray-100 rounded-2xl p-8 relative overflow-hidden transition-all duration-300;
+        .bg-surface-base rounded-card border border-customBorder-default p-8 hover:-translate-y-1 transition-all duration-300 {
         }
-        .card-premium:hover {
-            @apply shadow-premium-hover;
+        .bg-surface-base rounded-card border border-customBorder-default p-8 hover:-translate-y-1 transition-all duration-300:hover {
             transform: translateY(-2px); /* Subtle hover lift */
         }
 
@@ -97,7 +121,7 @@
 
         /* prefers-reduced-motion: Mandatory */
         @media (prefers-reduced-motion: reduce) {
-            .reveal-item, .card-premium:hover, .accordion-content, .accordion-inner {
+            .reveal-item, .bg-surface-base rounded-card border border-customBorder-default p-8 hover:-translate-y-1 transition-all duration-300:hover, .accordion-content, .accordion-inner {
                 transition: none !important;
                 transform: none !important;
                 filter: none !important;
@@ -125,7 +149,7 @@
             animation: toastExit 0.4s cubic-bezier(0.4, 0, 1, 1) forwards;
         }
         .toast-item i {
-            @apply text-secondary text-lg;
+            @apply text-sage-500 text-lg;
         }
         @keyframes toastEnter {
             from { opacity: 0; transform: translateY(24px) scale(0.95); filter: blur(4px); }
@@ -142,82 +166,64 @@
     </style>
 </head>
 
-<body class="font-sans text-gray-800 antialiased bg-gray-50">
+<body class="font-sans text-slate-900 antialiased bg-surface-base flex flex-col min-h-screen">
 
     <!-- Navbar (Pertahankan dari asli) -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-gray-100"
-        id="navbar">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-customBorder-default" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html">
-                        <img src="images/logonavbarfix.png" alt="Amarta Artha Institute"
-                            class="h-16 w-auto object-contain">
+                        <img src="images/logonavbarfix.png" alt="Amarta Artha Institute" class="h-16 w-auto object-contain">
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-gray-600 hover:text-primary font-medium transition">Beranda</a>
-                    <a href="about.html"
-                        class="text-primary font-bold border-b-2 border-primary pb-1 transition">Tentang
+                    <a href="index.html" class="text-slate-500 hover:text-slate-900 font-medium transition">Beranda</a>
+                    <a href="about.html" class="text-slate-900 font-medium border-b-2 border-slate-900 pb-1 transition">Tentang
                         Kami</a>
-                    <a href="portfolio.html"
-                        class="text-gray-600 hover:text-primary font-medium transition">Portofolio</a>
+                    <a href="portfolio.html" class="text-slate-500 hover:text-slate-900 font-medium transition">Portofolio</a>
                     <div class="relative group">
-                        <button class="text-gray-600 hover:text-primary font-medium transition flex items-center gap-1">
+                        <button class="text-slate-500 hover:text-slate-900 font-medium transition flex items-center gap-1">
                             Informasi <i class="fa-solid fa-chevron-down text-xs"></i>
                         </button>
-                        <div
-                            class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
-                            <a href="solutions.html"
-                                class="block px-4 py-3 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 transition rounded-t-lg">Services</a>
-                            <a href="ebook.html"
-                                class="block px-4 py-3 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 transition rounded-b-lg">e-Book</a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white border border-customBorder-default rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50">
+                            <a href="solutions.html" class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-blue-50 transition rounded-t-lg">Layanan</a>
+                            <a href="ebook.html" class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-blue-50 transition rounded-b-lg">e-Book</a>
                         </div>
                     </div>
-                    <a href="index.html#kontak"
-                        class="bg-primary text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <a href="index.html#kontak" class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         <i class="fa-regular fa-comment-dots mr-2"></i>Hubungi Kami
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none p-2"
-                        aria-label="Toggle mobile menu" title="Toggle mobile menu"><i class="fa-solid fa-bars text-2xl"
-                            id="menu-icon"></i> </button>
+                    <button id="mobile-menu-button" class="text-slate-500 hover:text-slate-900 focus:outline-none p-2" aria-label="Toggle mobile menu" title="Toggle mobile menu"><i class="fa-solid fa-bars text-2xl" id="menu-icon"></i> </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-gray-100" id="mobile-menu">
+        <div class="md:hidden hidden bg-white shadow-xl absolute w-full border-t border-customBorder-default" id="mobile-menu">
             <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html"
-                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
-                <a href="about.html"
-                    class="block px-3 py-3 text-primary bg-blue-50 rounded-lg font-bold transition">Tentang
+                <a href="index.html" class="block px-3 py-3 text-slate-800 hover:text-slate-900 hover:bg-blue-50 rounded-lg font-medium transition">Beranda</a>
+                <a href="about.html" class="block px-3 py-3 text-slate-900 bg-blue-50 rounded-lg font-medium transition">Tentang
                     Kami</a>
-                <a href="portfolio.html"
-                    class="block px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
+                <a href="portfolio.html" class="block px-3 py-3 text-slate-800 hover:text-slate-900 hover:bg-blue-50 rounded-lg font-medium transition">Portofolio</a>
                 <div class="group">
-                    <button
-                        class="w-full text-left px-3 py-3 text-gray-800 hover:text-primary hover:bg-blue-50 rounded-lg font-medium transition flex justify-between items-center">
-                        Informasi <i
-                            class="fa-solid fa-chevron-down text-xs transition duration-300 group-hover:rotate-180"></i>
+                    <button class="w-full text-left px-3 py-3 text-slate-800 hover:text-slate-900 hover:bg-blue-50 rounded-lg font-medium transition flex justify-between items-center">
+                        Informasi <i class="fa-solid fa-chevron-down text-xs transition duration-300 group-hover:rotate-180"></i>
                     </button>
                     <div class="hidden group-hover:block pl-4 mt-1 space-y-1">
-                        <a href="solutions.html"
-                            class="block px-3 py-2 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition">Services</a>
-                        <a href="ebook.html"
-                            class="block px-3 py-2 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 rounded-lg transition">e-Book</a>
+                        <a href="solutions.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-blue-50 rounded-lg transition">Layanan</a>
+                        <a href="ebook.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-blue-50 rounded-lg transition">e-Book</a>
                     </div>
                 </div>
-                <div class="pt-4 border-t border-gray-100 mt-2">
-                    <a href="index.html#kontak"
-                        class="block text-center bg-primary text-white px-3 py-3 rounded-lg font-bold shadow-md">Hubungi
+                <div class="pt-4 border-t border-customBorder-default mt-2">
+                    <a href="index.html#kontak" class="block text-center bg-slate-900 text-white px-3 py-3 rounded-lg font-medium shadow-md">Hubungi
                         Kami</a>
                 </div>
             </div>
@@ -226,296 +232,433 @@
 
     
 
-    <!-- 1. Header & Foto 4 Pilar -->
-    <section class="pt-24 pb-12 bg-white relative">
+    <!-- Profil Detail Praktisi -->
+    <section class="pt-32 pb-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 reveal-item">
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900">Empat Pilar Keahlian</h2>
-                <div class="w-full h-[2px] bg-secondary mt-6 mb-8"></div>
+                <h2 class="text-4xl md:text-5xl font-display font-medium text-slate-900">Pilar Keahlian</h2>
+                <div class="w-full h-[2px] bg-sage-500 mt-6 mb-8"></div>
             </div>
 
-            <!-- 4 Grid Layout (Atas) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10">
-                <!-- Foto 1 -->
-                <div class="flex flex-col reveal-item group">
-                    <div class="w-full aspect-[3/4] bg-gray-200 overflow-hidden relative mb-4 rounded-xl shadow-sm">
-                        <img src="images/Dr. Hendra.jpg" alt="Dr. Hendra Kusuma Wardana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="flex-grow flex flex-col bg-white px-2">
-                        <h3 class="text-lg font-bold text-gray-900 font-serif leading-tight mb-1">Dr. Hendra Kusuma<br>Wardana</h3>
-                        <p class="text-xs text-gray-500 font-medium leading-relaxed">Hukum Korporasi & Tata Kelola<br>BUMN</p>
-                    </div>
-                </div>
-                <!-- Foto 2 -->
-                <div class="flex flex-col reveal-item delay-100 group">
-                    <div class="w-full aspect-[3/4] bg-gray-200 overflow-hidden relative mb-4 rounded-xl shadow-sm">
-                        <img src="images/Dr. Firdaus Dewilmar.jpeg" alt="Dr. Firdaus Dewilmar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="flex-grow flex flex-col bg-white px-2">
-                        <h3 class="text-lg font-bold text-gray-900 font-serif leading-tight mb-1">Dr. Firdaus Dewilmar</h3>
-                        <p class="text-xs text-gray-500 font-medium leading-relaxed">Penegakan Hukum & Kebijakan<br>Publik</p>
-                    </div>
-                </div>
-                <!-- Foto 3 -->
-                <div class="flex flex-col reveal-item delay-200 group">
-                    <div class="w-full aspect-[3/4] bg-gray-200 overflow-hidden relative mb-4 rounded-xl shadow-sm">
-                        <img src="images/Ari Hasbullah.jpg" alt="Ali Hasbullah" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="flex-grow flex flex-col bg-white px-2">
-                        <h3 class="text-lg font-bold text-gray-900 font-serif leading-tight mb-1">Ali Hasbullah, M.B.A.</h3>
-                        <p class="text-xs text-gray-500 font-medium leading-relaxed">Cybersecurity & IT Governance</p>
-                    </div>
-                </div>
-                <!-- Foto 4 -->
-                <div class="flex flex-col reveal-item delay-300 group">
-                    <div class="w-full aspect-[3/4] bg-gray-200 overflow-hidden relative mb-4 rounded-xl shadow-sm">
-                        <img src="images/harry wibisono.jpeg" alt="Harry Wibisono" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="flex-grow flex flex-col bg-white px-2">
-                        <h3 class="text-lg font-bold text-gray-900 font-serif leading-tight mb-1">Harry Wibisono</h3>
-                        <p class="text-xs text-gray-500 font-medium leading-relaxed">Sales, Marketing & Pengembangan Pasar</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. Profil Detail (Bawah) -->
-    <section class="pb-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <!-- Praktisi 1 -->
-                <div class="card-premium flex flex-col reveal-item border-t-4 border-t-primary">
-                    <div class="flex items-center gap-5 mb-5">
-                        <!-- Tempat Foto -->
-                        <div class="w-20 h-20 rounded-2xl bg-gray-200 border border-gray-100 flex flex-col items-center justify-center text-gray-400 flex-shrink-0 overflow-hidden relative shadow-inner group">
-                            <img src="images/Dr. Hendra.jpg" alt="Dr. Hendra" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 font-serif leading-tight mb-1">Dr. Hendra Kusuma Wardana, S.H., M.H., CEH</h3>
-                            <p class="text-sm text-primary font-medium">Doktor Hukum Summa Cum Laude &middot; Direktur SDM & Umum &middot; Business Judgment Rule Practitioner</p>
-                        </div>
-                    </div>
+                
+<!-- Praktisi 1 -->
 
-                    <!-- Afiliasi Card -->
-                    <div class="bg-gray-50 border border-gray-100 rounded-lg p-3 mb-5">
-                        <div class="flex items-center gap-2 mb-1">
-                            <i class="fa-solid fa-building-columns text-secondary text-xs"></i>
-                            <span class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Jaringan Afiliasi</span>
-                        </div>
-                        <p class="text-xs text-gray-700 font-medium leading-relaxed">
-                            Founder & Koordinator, Amarta Artha Institute &middot; PT Timah Tbk, MIND ID Group &middot; RMD & Partners Law Office
-                        </p>
-                    </div>
+<!-- Praktisi 1 -->
+<div class="group relative flex flex-col bg-white rounded-3xl p-8 lg:p-10 border border-slate-900/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 reveal-item">
+    
+    <!-- Top section: Photo and Titles -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-900/5 ring-4 ring-white shadow-sm relative">
+            <img src="images/Dr. Hendra.jpg" alt="Dr. Hendra Kusuma Wardana, S.H., M.H., CEH" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+            <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10 pointer-events-none"></div>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-medium text-slate-900 mb-2 tracking-tight">Dr. Hendra Kusuma Wardana, S.H., M.H., CEH</h3>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-sage-500 font-semibold mb-2 leading-relaxed">Doktor Hukum Summa Cum Laude · Direktur SDM &amp; Umum · Business Judgment Rule Practitioner</p>
+            <p class="text-[13px] text-slate-500 font-medium leading-relaxed">Founder &amp; Koordinator, Amarta Artha Institute · PT Timah Tbk, MIND ID Group · RMD &amp; Partners Law Office</p>
+        </div>
+    </div>
 
-                    <p class="text-sm text-gray-700 leading-relaxed mb-6">
-                        Dr. Hendra Kusuma Wardana adalah salah satu profesional eksekutif paling unik di Indonesia — individu langka yang beroperasi dengan otoritas penuh di ruang sidang, ruang Direksi, dan C-suite sekaligus. Sebagai Direktur SDM & Umum di PT Timah Tbk (MIND ID Group), beliau merancang salah satu pemulihan keuangan paling luar biasa dalam sejarah BUMN Indonesia: turnaround P&L terverifikasi sebesar IDR 1,64 Triliun dalam satu tahun anggaran — dilakukan bersamaan dengan penanganan investigasi antikorupsi skala nasional.
-                    </p>
+    <!-- Bio -->
+    <p class="text-[14px] text-slate-600 leading-relaxed mb-8 font-light">
+        Dr. Hendra Kusuma Wardana adalah salah satu profesional eksekutif paling unik di Indonesia — individu langka yang beroperasi dengan otoritas penuh di ruang sidang, ruang Direksi, dan C-suite sekaligus. Sebagai Direktur SDM &amp; Umum di PT Timah Tbk (MIND ID Group), beliau merancang salah satu pemulihan keuangan paling luar biasa dalam sejarah BUMN Indonesia: turnaround P&amp;L terverifikasi sebesar IDR 1,64 Triliun dalam satu tahun anggaran — dilakukan bersamaan dengan penanganan investigasi antikorupsi skala nasional.
+    </p>
 
-                    <div class="mb-6">
-                        <h4 class="text-sm font-bold text-gray-900 mb-2 border-b border-gray-100 pb-1">Pencapaian Strategis</h4>
-                        <ul class="text-sm text-gray-600 space-y-2 list-disc pl-4">
-                            <li>Membukukan turnaround P&L IDR 1,64 Triliun dalam 12 bulan di PT Timah Tbk (MIND ID) — mengubah kerugian IDR 450 miliar menjadi laba IDR 1,19 Triliun</li>
-                            <li>Mencapai zero asset seizures selama investigasi Tipikor & TPPU terbesar dalam sejarah SOE Indonesia</li>
-                            <li>Mengangkat skor GCG sebesar 29 poin persentase di tengah krisis korporasi nasional</li>
-                            <li>Mengamankan 100% Right-of-Way sepanjang 1.046 km pipa gas nasional</li>
-                            <li>Meraih penghargaan Top Human Capital Award 2024</li>
-                        </ul>
-                    </div>
+    <!-- Achievements -->
+    <div class="mb-8">
+        <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-[0.15em] mb-5 flex items-center gap-4">
+            Pencapaian Strategis <span class="h-px bg-slate-900/10 flex-1"></span>
+        </h4>
+        <ul class="text-[13px] text-slate-600 leading-relaxed font-light space-y-3 list-disc pl-5">
+            <li>Membukukan turnaround P&amp;L IDR 1,64 Triliun dalam 12 bulan di PT Timah Tbk (MIND ID) — mengubah kerugian IDR 450 miliar menjadi laba IDR 1,19 Triliun</li><li>Mencapai zero asset seizures selama investigasi Tipikor &amp; TPPU terbesar dalam sejarah SOE Indonesia</li><li>Mengangkat skor GCG sebesar 29 poin persentase di tengah krisis korporasi nasional</li><li>Mengamankan 100% Right-of-Way sepanjang 1.046 km pipa gas nasional</li><li>Meraih penghargaan Top Human Capital Award 2024</li>
+        </ul>
+    </div>
 
-                    <div class="mt-auto pt-4 border-t border-gray-100">
-                        <button class="accordion-toggle w-full flex justify-between items-center text-sm font-bold text-primary hover:text-blue-900 transition-colors py-2" aria-expanded="false">
-                            <span>Detail Keahlian & Kredensial</span>
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content" aria-expanded="false">
-                            <div class="accordion-inner pt-4">
-                                <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                                    <strong>Bidang Keahlian:</strong> Business Judgment Rule &middot; Tata Kelola BUMN &middot; Hukum Korporasi &middot; CHRO & Transformasi SDM &middot; Anti-Korupsi Preventif &middot; ESG & Standar IFC &middot; AI-Driven HR &middot; Cybersecurity (CEH)
+    <!-- Accordion / Details -->
+    <div class="mt-auto pt-6 border-t border-slate-900/5">
+        <button class="accordion-toggle w-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-900 hover:text-sage-500 transition-colors py-2 group/btn" aria-expanded="false">
+            <span>Detail Keahlian &amp; Kredensial</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content" aria-expanded="false">
+            <div class="accordion-inner pt-6 pb-2 space-y-4">
+                
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Bidang Keahlian:</strong> Business Judgment Rule · Tata Kelola BUMN · Hukum Korporasi · CHRO &amp; Transformasi SDM · Anti-Korupsi Preventif · ESG &amp; Standar IFC · AI-Driven HR · Cybersecurity (CEH)
                                 </p>
-                                <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                                    <strong>Pendidikan:</strong> Doktor Ilmu Hukum (Dr.) Summa Cum Laude — Universitas Trisakti &middot; Magister Hukum Summa Cum Laude — Universitas Trisakti &middot; Sarjana Hukum — Universitas Mataram
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Pendidikan:</strong> Doktor Ilmu Hukum (Dr.) Summa Cum Laude — Universitas Trisakti · Magister Hukum Summa Cum Laude — Universitas Trisakti · Sarjana Hukum — Universitas Mataram
                                 </p>
-                                <p class="text-xs text-gray-600 leading-relaxed">
-                                    <strong>Sertifikasi:</strong> Advokat PERADI &middot; Certified Ethical Hacker (CEH) EC-Council &middot; GRCE &middot; Sertifikasi Manajemen Risiko BUMN Level 5
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Sertifikasi:</strong> Advokat PERADI · Certified Ethical Hacker (CEH) EC-Council · GRCE · Sertifikasi Manajemen Risiko BUMN Level 5
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
                 <!-- Praktisi 2 -->
-                <div class="card-premium flex flex-col reveal-item delay-100 border-t-4 border-t-secondary">
-                    <div class="flex items-center gap-5 mb-5">
-                        <!-- Tempat Foto -->
-                        <div class="w-20 h-20 rounded-2xl bg-gray-200 border border-gray-100 flex flex-col items-center justify-center text-gray-400 flex-shrink-0 overflow-hidden relative shadow-inner group">
-                            <img src="images/Dr. Firdaus Dewilmar.jpeg" alt="Dr. Firdaus Dewilmar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 font-serif leading-tight mb-1">Dr. Firdaus Dewilmar, S.H., M.H.</h3>
-                            <p class="text-sm text-primary font-medium">Doktor Ilmu Hukum &middot; Mantan Kepala Kejaksaan Tinggi &middot; Penasihat Strategis Senior</p>
-                        </div>
-                    </div>
+                
+<!-- Praktisi 2 -->
 
-                    <!-- Afiliasi Card -->
-                    <div class="bg-gray-50 border border-gray-100 rounded-lg p-3 mb-5">
-                        <div class="flex items-center gap-2 mb-1">
-                            <i class="fa-solid fa-building-columns text-secondary text-xs"></i>
-                            <span class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Jaringan Afiliasi</span>
-                        </div>
-                        <p class="text-xs text-gray-700 font-medium leading-relaxed">
-                            Kejaksaan Agung RI (Purn.) &middot; Penasihat Senior, Kementerian ESDM &middot; Otoritas Batam
-                        </p>
-                    </div>
+<!-- Praktisi 2 -->
+<div class="group relative flex flex-col bg-white rounded-3xl p-8 lg:p-10 border border-slate-900/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 reveal-item">
+    
+    <!-- Top section: Photo and Titles -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-900/5 ring-4 ring-white shadow-sm relative">
+            <img src="images/Dr. Firdaus Dewilmar.jpeg" alt="Dr. Firdaus Dewilmar, S.H., M.H." class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+            <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10 pointer-events-none"></div>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-medium text-slate-900 mb-2 tracking-tight">Dr. Firdaus Dewilmar, S.H., M.H.</h3>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-sage-500 font-semibold mb-2 leading-relaxed">Doktor Ilmu Hukum · Mantan Kepala Kejaksaan Tinggi · Penasihat Strategis Senior</p>
+            <p class="text-[13px] text-slate-500 font-medium leading-relaxed">Kejaksaan Agung RI (Purn.) · Penasihat Senior, Kementerian ESDM · Otoritas Batam</p>
+        </div>
+    </div>
 
-                    <p class="text-sm text-gray-700 leading-relaxed mb-6">
-                        Ada sedikit sekali tokoh di Indonesia yang pernah menyaksikan arsitektur sistem penegakan hukum dari dalam — dan lebih sedikit lagi yang pernah memimpinnya di tingkat provinsi tertinggi. Dr. Firdaus Dewilmar adalah salah satunya. Selama lebih dari tiga dekade di Kejaksaan Agung RI, beliau mengemban posisi paling strategis dalam hirarki kejaksaan.
-                    </p>
+    <!-- Bio -->
+    <p class="text-[14px] text-slate-600 leading-relaxed mb-8 font-light">
+        Ada sedikit sekali tokoh di Indonesia yang pernah menyaksikan arsitektur sistem penegakan hukum dari dalam — dan lebih sedikit lagi yang pernah memimpinnya di tingkat provinsi tertinggi. Dr. Firdaus Dewilmar adalah salah satunya. Selama lebih dari tiga dekade di Kejaksaan Agung RI, beliau mengemban posisi paling strategis dalam hirarki kejaksaan.
+    </p>
 
-                    <div class="mb-6">
-                        <h4 class="text-sm font-bold text-gray-900 mb-2 border-b border-gray-100 pb-1">Pencapaian Strategis</h4>
-                        <ul class="text-sm text-gray-600 space-y-2 list-disc pl-4">
-                            <li>Memimpin operasional Kejaksaan Tinggi Sulawesi Selatan & Sulawesi Barat</li>
-                            <li>Menjabat Sekretaris Jaksa Agung Muda Bidang Pidana Militer (SesJAMPidMil) di Kejaksaan Agung RI</li>
-                            <li>Memimpin Pusat Pendidikan & Pelatihan Teknis Fungsional Kejaksaan</li>
-                            <li>Diajukan sebagai calon Penjabat Gubernur Gorontalo dan kandidat terkuat Jaksa Agung RI</li>
-                        </ul>
-                    </div>
+    <!-- Achievements -->
+    <div class="mb-8">
+        <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-[0.15em] mb-5 flex items-center gap-4">
+            Pencapaian Strategis <span class="h-px bg-slate-900/10 flex-1"></span>
+        </h4>
+        <ul class="text-[13px] text-slate-600 leading-relaxed font-light space-y-3 list-disc pl-5">
+            <li>Memimpin operasional Kejaksaan Tinggi Sulawesi Selatan &amp; Sulawesi Barat</li><li>Menjabat Sekretaris Jaksa Agung Muda Bidang Pidana Militer (SesJAMPidMil) di Kejaksaan Agung RI</li><li>Memimpin Pusat Pendidikan &amp; Pelatihan Teknis Fungsional Kejaksaan</li><li>Diajukan sebagai calon Penjabat Gubernur Gorontalo dan kandidat terkuat Jaksa Agung RI</li>
+        </ul>
+    </div>
 
-                    <div class="mt-auto pt-4 border-t border-gray-100">
-                        <button class="accordion-toggle w-full flex justify-between items-center text-sm font-bold text-primary hover:text-blue-900 transition-colors py-2" aria-expanded="false">
-                            <span>Detail Keahlian & Posisi</span>
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content" aria-expanded="false">
-                            <div class="accordion-inner pt-4">
-                                <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                                    <strong>Bidang Keahlian:</strong> Hukum Pidana Indonesia &middot; Intelijen Kejaksaan &middot; Anti-Korupsi & Tipikor &middot; Kebijakan Publik Nasional &middot; Regulasi Energi & ESDM &middot; Tata Kelola Institusi Negara &middot; Hukum Pidana Militer &middot; Hubungan Pemerintah & Regulator
+    <!-- Accordion / Details -->
+    <div class="mt-auto pt-6 border-t border-slate-900/5">
+        <button class="accordion-toggle w-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-900 hover:text-sage-500 transition-colors py-2 group/btn" aria-expanded="false">
+            <span>Detail Keahlian &amp; Posisi</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content" aria-expanded="false">
+            <div class="accordion-inner pt-6 pb-2 space-y-4">
+                
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Bidang Keahlian:</strong> Hukum Pidana Indonesia · Intelijen Kejaksaan · Anti-Korupsi &amp; Tipikor · Kebijakan Publik Nasional · Regulasi Energi &amp; ESDM · Tata Kelola Institusi Negara · Hukum Pidana Militer · Hubungan Pemerintah &amp; Regulator
                                 </p>
-                                <p class="text-xs text-gray-600 leading-relaxed">
-                                    <strong>Posisi Strategis Nasional:</strong> Kajati Gorontalo & Sulawesi Selatan–Barat &middot; SesJAMPidMil Kejaksaan Agung RI &middot; Kepala Pusdiklat Teknis Fungsional Kejagung &middot; Senior Adviser, Kementerian ESDM & Otoritas Batam &middot; Kandidat Terkuat Jaksa Agung RI (KOPPAJA, 2024)
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Posisi Strategis Nasional:</strong> Kajati Gorontalo &amp; Sulawesi Selatan–Barat · SesJAMPidMil Kejaksaan Agung RI · Kepala Pusdiklat Teknis Fungsional Kejagung · Senior Adviser, Kementerian ESDM &amp; Otoritas Batam · Kandidat Terkuat Jaksa Agung RI (KOPPAJA, 2024)
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
                 <!-- Praktisi 3 -->
-                <div class="card-premium flex flex-col reveal-item border-t-4 border-t-gray-800">
-                    <div class="flex items-center gap-5 mb-5">
-                        <!-- Tempat Foto -->
-                        <div class="w-20 h-20 rounded-2xl bg-gray-200 border border-gray-100 flex flex-col items-center justify-center text-gray-400 flex-shrink-0 overflow-hidden relative shadow-inner group">
-                            <img src="images/Ari Hasbullah.jpg" alt="Ali Hasbullah" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 font-serif leading-tight mb-1">Ali Hasbullah, M.B.A.</h3>
-                            <p class="text-sm text-primary font-medium">CISSP &middot; CISA &middot; CCSP &middot; CIPM &middot; ISO 27001 Lead Auditor &middot; CompTIA Project+</p>
-                        </div>
-                    </div>
+                
+<!-- Praktisi 3 -->
 
-                    <!-- Afiliasi Card -->
-                    <div class="bg-gray-50 border border-gray-100 rounded-lg p-3 mb-5">
-                        <div class="flex items-center gap-2 mb-1">
-                            <i class="fa-solid fa-building-columns text-secondary text-xs"></i>
-                            <span class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Jaringan Afiliasi</span>
-                        </div>
-                        <p class="text-xs text-gray-700 font-medium leading-relaxed">
-                            Mantan Acting CISO & SVP, Indosat Ooredoo Hutchison &middot; Mantan Executive Director, Ernst & Young Indonesia
-                        </p>
-                    </div>
+<!-- Praktisi 3 -->
+<div class="group relative flex flex-col bg-white rounded-3xl p-8 lg:p-10 border border-slate-900/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 reveal-item">
+    
+    <!-- Top section: Photo and Titles -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-900/5 ring-4 ring-white shadow-sm relative">
+            <img src="images/Ari Hasbullah.jpg" alt="Ali Hasbullah, M.B.A." class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+            <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10 pointer-events-none"></div>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-medium text-slate-900 mb-2 tracking-tight">Ali Hasbullah, M.B.A.</h3>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-sage-500 font-semibold mb-2 leading-relaxed">CISSP · CISA · CCSP · CIPM · ISO 27001 Lead Auditor · CompTIA Project+</p>
+            <p class="text-[13px] text-slate-500 font-medium leading-relaxed">Mantan Acting CISO &amp; SVP, Indosat Ooredoo Hutchison · Mantan Executive Director, Ernst &amp; Young Indonesia</p>
+        </div>
+    </div>
 
-                    <p class="text-sm text-gray-700 leading-relaxed mb-6">
-                        Kepemimpinan keamanan siber di Indonesia saat ini dipenuhi sertifikasi dan kredensial. Yang benar-benar langka adalah praktisi yang tidak hanya memberikan advisory di tingkat Boardroom, tetapi secara personal telah menanggung akuntabilitas penuh sebagai CISO di salah satu enterprise digital terbesar Indonesia — sekaligus memiliki rigor analitis dari karier Big 4 konsultan selama hampir satu dekade.
-                    </p>
+    <!-- Bio -->
+    <p class="text-[14px] text-slate-600 leading-relaxed mb-8 font-light">
+        Kepemimpinan keamanan siber di Indonesia saat ini dipenuhi sertifikasi dan kredensial. Yang benar-benar langka adalah praktisi yang tidak hanya memberikan advisory di tingkat Boardroom, tetapi secara personal telah menanggung akuntabilitas penuh sebagai CISO di salah satu enterprise digital terbesar Indonesia — sekaligus memiliki rigor analitis dari karier Big 4 konsultan selama hampir satu dekade.
+    </p>
 
-                    <div class="mb-6">
-                        <h4 class="text-sm font-bold text-gray-900 mb-2 border-b border-gray-100 pb-1">Pencapaian Strategis</h4>
-                        <ul class="text-sm text-gray-600 space-y-2 list-disc pl-4">
-                            <li>Menjabat Acting CISO & SVP Head of IT Corporate Security di Indosat Ooredoo Hutchison</li>
-                            <li>Sebagai Executive Director EY Indonesia, memberikan advisory kepada OJK, BRI, IDX, Telkomsel, Telkom, Unilever, dan Kementerian Keuangan</li>
-                            <li>Mengimplementasikan sertifikasi ISO 27001 untuk Hutchison 3 Indonesia — berhasil melewati audit PwC, ISAE 3402, dan GSMA</li>
-                            <li>Memimpin program IT SOX 404 Advisory untuk Telkomsel, Telkom, Unilever</li>
-                        </ul>
-                    </div>
+    <!-- Achievements -->
+    <div class="mb-8">
+        <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-[0.15em] mb-5 flex items-center gap-4">
+            Pencapaian Strategis <span class="h-px bg-slate-900/10 flex-1"></span>
+        </h4>
+        <ul class="text-[13px] text-slate-600 leading-relaxed font-light space-y-3 list-disc pl-5">
+            <li>Menjabat Acting CISO &amp; SVP Head of IT Corporate Security di Indosat Ooredoo Hutchison</li><li>Sebagai Executive Director EY Indonesia, memberikan advisory kepada OJK, BRI, IDX, Telkomsel, Telkom, Unilever, dan Kementerian Keuangan</li><li>Mengimplementasikan sertifikasi ISO 27001 untuk Hutchison 3 Indonesia — berhasil melewati audit PwC, ISAE 3402, dan GSMA</li><li>Memimpin program IT SOX 404 Advisory untuk Telkomsel, Telkom, Unilever</li>
+        </ul>
+    </div>
 
-                    <div class="mt-auto pt-4 border-t border-gray-100">
-                        <button class="accordion-toggle w-full flex justify-between items-center text-sm font-bold text-primary hover:text-blue-900 transition-colors py-2" aria-expanded="false">
-                            <span>Detail Keahlian & Pendidikan</span>
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content" aria-expanded="false">
-                            <div class="accordion-inner pt-4">
-                                <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                                    <strong>Bidang Keahlian:</strong> CISO-as-a-Service &middot; Strategi Keamanan Siber Enterprise &middot; IT Governance & Assurance &middot; Kepatuhan OJK & UU PDP &middot; ISO 27001:2022 & NIST CSF 2.0 &middot; Due Diligence M&A IT &middot; Pre-IPO IT Readiness &middot; SOC & MSSP Governance
+    <!-- Accordion / Details -->
+    <div class="mt-auto pt-6 border-t border-slate-900/5">
+        <button class="accordion-toggle w-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-900 hover:text-sage-500 transition-colors py-2 group/btn" aria-expanded="false">
+            <span>Detail Keahlian &amp; Pendidikan</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content" aria-expanded="false">
+            <div class="accordion-inner pt-6 pb-2 space-y-4">
+                
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Bidang Keahlian:</strong> CISO-as-a-Service · Strategi Keamanan Siber Enterprise · IT Governance &amp; Assurance · Kepatuhan OJK &amp; UU PDP · ISO 27001:2022 &amp; NIST CSF 2.0 · Due Diligence M&amp;A IT · Pre-IPO IT Readiness · SOC &amp; MSSP Governance
                                 </p>
-                                <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                                    <strong>Sertifikasi:</strong> CISSP &middot; CISA &middot; CCSP &middot; CIPM &middot; ISO 27001 Lead Auditor &middot; CompTIA Project+
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Sertifikasi:</strong> CISSP · CISA · CCSP · CIPM · ISO 27001 Lead Auditor · CompTIA Project+
                                 </p>
-                                <p class="text-xs text-gray-600 leading-relaxed">
-                                    <strong>Pendidikan:</strong> M.B.A. Manajemen Keuangan — Universitas Indonesia &middot; B.S. Teknik Komputer — Universitas Indonesia
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Pendidikan:</strong> M.B.A. Manajemen Keuangan — Universitas Indonesia · B.S. Teknik Komputer — Universitas Indonesia
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
                 <!-- Praktisi 4 -->
-                <div class="card-premium flex flex-col reveal-item delay-100 border-t-4 border-t-blue-900">
-                    <div class="flex items-center gap-5 mb-5">
-                        <!-- Tempat Foto -->
-                        <div class="w-20 h-20 rounded-2xl bg-gray-200 border border-gray-100 flex flex-col items-center justify-center text-gray-400 flex-shrink-0 overflow-hidden relative shadow-inner group">
-                            <img src="images/harry wibisono.jpeg" alt="Harry Wibisono" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 font-serif leading-tight mb-1">Harry Wibisono</h3>
-                            <p class="text-sm text-primary font-medium">Senior Marketing Executive &middot; Independent Marketing Advisor &middot; FMCG Strategist</p>
-                        </div>
-                    </div>
+                
+<!-- Praktisi 4 -->
 
-                    <!-- Afiliasi Card -->
-                    <div class="bg-gray-50 border border-gray-100 rounded-lg p-3 mb-5">
-                        <div class="flex items-center gap-2 mb-1">
-                            <i class="fa-solid fa-building-columns text-secondary text-xs"></i>
-                            <span class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Jaringan Afiliasi</span>
-                        </div>
-                        <p class="text-xs text-gray-700 font-medium leading-relaxed">
-                            28 Tahun PT HM Sampoerna Philip Morris International &middot; Independent Marketing Advisor (IMA)
-                        </p>
-                    </div>
+<!-- Praktisi 4 -->
+<div class="group relative flex flex-col bg-white rounded-3xl p-8 lg:p-10 border border-slate-900/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 reveal-item">
+    
+    <!-- Top section: Photo and Titles -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-900/5 ring-4 ring-white shadow-sm relative">
+            <img src="images/harry wibisono.jpeg" alt="Harry Wibisono" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+            <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10 pointer-events-none"></div>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-medium text-slate-900 mb-2 tracking-tight">Harry Wibisono</h3>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-sage-500 font-semibold mb-2 leading-relaxed">Senior Marketing Executive · Independent Marketing Advisor · FMCG Strategist</p>
+            <p class="text-[13px] text-slate-500 font-medium leading-relaxed">28 Tahun PT HM Sampoerna Philip Morris International · Independent Marketing Advisor (IMA)</p>
+        </div>
+    </div>
 
-                    <p class="text-sm text-gray-700 leading-relaxed mb-6">
-                        Harry Wibisono menghabiskan 28 tahun membangun kepemimpinan pasar di lapangan. Selama hampir tiga dekade di PT HM Sampoerna — afiliasi Philip Morris International — beliau bergerak melalui setiap lapisan kepemimpinan pemasaran dan penjualan yang signifikan, hingga bertanggung jawab atas tiga wilayah terbesar Indonesia: Jawa Timur, Sumatra 1, dan Jawa Tengah.
-                    </p>
+    <!-- Bio -->
+    <p class="text-[14px] text-slate-600 leading-relaxed mb-8 font-light">
+        Harry Wibisono menghabiskan 28 tahun membangun kepemimpinan pasar di lapangan. Selama hampir tiga dekade di PT HM Sampoerna — afiliasi Philip Morris International — beliau bergerak melalui setiap lapisan kepemimpinan pemasaran dan penjualan yang signifikan, hingga bertanggung jawab atas tiga wilayah terbesar Indonesia: Jawa Timur, Sumatra 1, dan Jawa Tengah.
+    </p>
 
-                    <div class="mb-6">
-                        <h4 class="text-sm font-bold text-gray-900 mb-2 border-b border-gray-100 pb-1">Pencapaian Strategis</h4>
-                        <ul class="text-sm text-gray-600 space-y-2 list-disc pl-4">
-                            <li>Meraih posisi Market Leader di Surabaya (2005) — pasar FMCG paling kompetitif di Indonesia Timur</li>
-                            <li>Mereplikasi kepemimpinan pasar di wilayah Bali & Nusa Tenggara</li>
-                            <li>Meraih posisi Market Leader di Sumatra 1</li>
-                            <li>Mempertahankan keanggotaan 'Number Club' Sampoerna selama lima tahun berturut-turut</li>
-                            <li>Menyelesaikan on-the-job training internasional di 6 negara: Malaysia, Singapura, Vietnam, Hong Kong, Australia, Swiss</li>
-                        </ul>
-                    </div>
+    <!-- Achievements -->
+    <div class="mb-8">
+        <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-[0.15em] mb-5 flex items-center gap-4">
+            Pencapaian Strategis <span class="h-px bg-slate-900/10 flex-1"></span>
+        </h4>
+        <ul class="text-[13px] text-slate-600 leading-relaxed font-light space-y-3 list-disc pl-5">
+            <li>Meraih posisi Market Leader di Surabaya (2005) — pasar FMCG paling kompetitif di Indonesia Timur</li><li>Mereplikasi kepemimpinan pasar di wilayah Bali &amp; Nusa Tenggara</li><li>Meraih posisi Market Leader di Sumatra 1</li><li>Mempertahankan keanggotaan 'Number Club' Sampoerna selama lima tahun berturut-turut</li><li>Menyelesaikan on-the-job training internasional di 6 negara: Malaysia, Singapura, Vietnam, Hong Kong, Australia, Swiss</li>
+        </ul>
+    </div>
 
-                    <div class="mt-auto pt-4 border-t border-gray-100">
-                        <button class="accordion-toggle w-full flex justify-between items-center text-sm font-bold text-primary hover:text-blue-900 transition-colors py-2" aria-expanded="false">
-                            <span>Detail Keahlian & Kontribusi</span>
-                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="accordion-content" aria-expanded="false">
-                            <div class="accordion-inner pt-4">
-                                <p class="text-xs text-gray-600 mb-3 leading-relaxed">
-                                    <strong>Bidang Keahlian:</strong> Brand Building & Market Leadership &middot; Regional Consumer Engagement &middot; Sales Force Architecture &middot; Field Marketing & Distribusi &middot; Team Coaching & Performance Culture &middot; UMKM & SME Marketing Advisory &middot; FMCG Market Entry & Expansion
+    <!-- Accordion / Details -->
+    <div class="mt-auto pt-6 border-t border-slate-900/5">
+        <button class="accordion-toggle w-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-900 hover:text-sage-500 transition-colors py-2 group/btn" aria-expanded="false">
+            <span>Detail Keahlian &amp; Kontribusi</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content" aria-expanded="false">
+            <div class="accordion-inner pt-6 pb-2 space-y-4">
+                
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Bidang Keahlian:</strong> Brand Building &amp; Market Leadership · Regional Consumer Engagement · Sales Force Architecture · Field Marketing &amp; Distribusi · Team Coaching &amp; Performance Culture · UMKM &amp; SME Marketing Advisory · FMCG Market Entry &amp; Expansion
                                 </p>
-                                <p class="text-xs text-gray-600 leading-relaxed">
-                                    <strong>Kontribusi:</strong> Pembicara Tetap IMA/AMA, KADIN, Rotary Club &middot; Dosen Tamu Universitas Balikpapan, Samarinda, Manado
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Kontribusi:</strong> Pembicara Tetap IMA/AMA, KADIN, Rotary Club · Dosen Tamu Universitas Balikpapan, Samarinda, Manado
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                <!-- Praktisi 5 -->
+                
+<!-- Praktisi 5 -->
+
+<!-- Praktisi 5 -->
+<div class="group relative flex flex-col bg-white rounded-3xl p-8 lg:p-10 border border-slate-900/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 reveal-item">
+    
+    <!-- Top section: Photo and Titles -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-900/5 ring-4 ring-white shadow-sm relative">
+            <div class="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform duration-700"><i class="fa-solid fa-camera text-2xl"></i></div>
+            <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10 pointer-events-none"></div>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-medium text-slate-900 mb-2 tracking-tight">Muhammad Wahid Sutopo</h3>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-sage-500 font-semibold mb-2 leading-relaxed">Infrastructure CEO &amp; PPP Architect · Former President Director &amp; CEO PT PII (Persero) · Strategic Transformation</p>
+            <p class="text-[13px] text-slate-500 font-medium leading-relaxed">PT Penjaminan Infrastruktur Indonesia (Persero) · Ministry of Finance RI · PGN (Persero) Tbk · Indosat</p>
+        </div>
+    </div>
+
+    <!-- Bio -->
+    <p class="text-[14px] text-slate-600 leading-relaxed mb-8 font-light">
+        For over two decades, Muhammad Wahid Sutopo has operated at the intersection of government policy, capital markets, and operational execution a rare combination built deliberately, not by accident. As President Director &amp; CEO of PT Penjaminan Infrastruktur Indonesia (Persero) the national infrastructure guarantee institution under the Ministry of Finance RI he led the institution that underwrites the financial viability of Indonesia's largest Public-Private Partnership (PPP) projects: toll roads, water systems, energy infrastructure, and urban transit corridors.
+    </p>
+
+    <!-- Achievements -->
+    <div class="mb-8">
+        <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-[0.15em] mb-5 flex items-center gap-4">
+            Pencapaian Strategis <span class="h-px bg-slate-900/10 flex-1"></span>
+        </h4>
+        <ul class="text-[13px] text-slate-600 leading-relaxed font-light space-y-3 list-disc pl-5">
+            <li>Led PT Penjaminan Infrastruktur Indonesia (Persero) for nearly 8 years establishing PT PII as the primary sovereign guarantee vehicle for National Strategic Projects (PSN)</li><li>Architected the PPP Joint Office coordination ecosystem bridging central government, sub-national entities, and multilateral agencies</li><li>As Director of Strategy &amp; Business Development at PGN (Persero) Tbk, defined the energy sector's strategic direction during its most critical consolidation period</li><li>Built Indosat’s Investor Relations function from the ground up earning “Best IR” recognition from FinanceAsia and AsiaMoney</li><li>Served as President Commissioner at PGAS Telekomunikasi Nusantara (6+ years) and PT PGN LNG Indonesia</li>
+        </ul>
+    </div>
+
+    <!-- Accordion / Details -->
+    <div class="mt-auto pt-6 border-t border-slate-900/5">
+        <button class="accordion-toggle w-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-900 hover:text-sage-500 transition-colors py-2 group/btn" aria-expanded="false">
+            <span>Detail Keahlian &amp; Kredensial</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content" aria-expanded="false">
+            <div class="accordion-inner pt-6 pb-2 space-y-4">
+                
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Bidang Keahlian:</strong> Infrastructure Guarantee &amp; PPP · National Infrastructure Policy · Development Finance · Institutional Investor Relations · SOE Strategy &amp; Business Transformation · Multi-Stakeholder Navigation · Executive Leadership &amp; Coaching · Human &amp; Machine Intelligence
+                                </p>
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Pendidikan:</strong> Executive Education Business Analytics: Decision Making Using Data │ Cambridge Judge Business School (Emeritus), 2020 · Master of Management (MM) International Business │ Institut Pengembangan Manajemen Indonesia (IPMI) · Bachelor of Engineering Telecommunications &amp; Electrical Engineering │ Institut Teknologi Bandung (ITB)
+                                </p>
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Executive Track Record:</strong> 25+ Years SOE Executive Track Record · 8 Years Leading PT PII (Persero) – Ministry of Finance RI · 3 SOE Board Roles (Director &amp; Commissioner) · “Best IR” FinanceAsia &amp; AsiaMoney – VP Investor Relations, Indosat · Director of Strategy &amp; Business Development, PGN (Persero) Tbk
+                                </p>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                <!-- Praktisi 6 -->
+                
+<!-- Praktisi 6 -->
+
+<!-- Praktisi 6 -->
+<div class="group relative flex flex-col bg-white rounded-3xl p-8 lg:p-10 border border-slate-900/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 reveal-item">
+    
+    <!-- Top section: Photo and Titles -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-900/5 ring-4 ring-white shadow-sm relative">
+            <div class="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform duration-700"><i class="fa-solid fa-camera text-2xl"></i></div>
+            <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10 pointer-events-none"></div>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-medium text-slate-900 mb-2 tracking-tight">Mangatas Panjaitan</h3>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-sage-500 font-semibold mb-2 leading-relaxed">President Director PT Transportasi Gas Indonesia · Senior Finance Expert PGN · IPO, Financial Modelling &amp; Engineering Specialist</p>
+            <p class="text-[13px] text-slate-500 font-medium leading-relaxed">PT Transportasi Gas Indonesia · PT Perusahaan Gas Negara (Persero) Tbk · HKW &amp; Partner Law Firm</p>
+        </div>
+    </div>
+
+    <!-- Bio -->
+    <p class="text-[14px] text-slate-600 leading-relaxed mb-8 font-light">
+        Mangatas Panjaitan is a finance executive with the DNA of a true accountant built upon a 14-year foundation at PT Perusahaan Gas Negara (PGN), reinforced by full leadership for over a decade at PT Transportasi Gas Indonesia (TGI) across roles as Commissioner, Finance Director, and President Director. A career trajectory that moved from technical accounting to the apex of corporate leadership provides a perspective rarely possessed: deep command of numbers alongside sharp strategic acumen in Board-level decision-making. His core expertise in IPO, financial modelling, and financial engineering makes him one of the most seasoned corporate finance practitioners in Indonesia's energy and infrastructure sector.
+    </p>
+
+    <!-- Achievements -->
+    <div class="mb-8">
+        <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-[0.15em] mb-5 flex items-center gap-4">
+            Pencapaian Strategis <span class="h-px bg-slate-900/10 flex-1"></span>
+        </h4>
+        <ul class="text-[13px] text-slate-600 leading-relaxed font-light space-y-3 list-disc pl-5">
+            <li>Led PT Transportasi Gas Indonesia (TGI) as President Director (2013–2015) PGN's strategic subsidiary managing the national gas transmission network bearing full accountability for corporate operational continuity</li><li>Served as Finance Director of TGI for 4 years (2009–2013) leading the entire finance and administration directorate, architecting financing structures, cash flow governance, liquidity, and corporate solvency</li><li>Built a 14+ year track record at PT Perusahaan Gas Negara (PGN) Tbk rising from Head of Accounting Section (1991) to Head of Accounting &amp; Budgeting Division (2004)</li><li>Returned to PGN as Senior Finance Expert (2015–2016) following his tenure as TGI President Director directly accountable for the effectiveness and efficiency of the parent entity's cash flow</li><li>Equity Partner at HKW &amp; Partner Law Firm since 2017 integrating corporate finance expertise with business law practice</li>
+        </ul>
+    </div>
+
+    <!-- Accordion / Details -->
+    <div class="mt-auto pt-6 border-t border-slate-900/5">
+        <button class="accordion-toggle w-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-900 hover:text-sage-500 transition-colors py-2 group/btn" aria-expanded="false">
+            <span>Detail Keahlian &amp; Kredensial</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content" aria-expanded="false">
+            <div class="accordion-inner pt-6 pb-2 space-y-4">
+                
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Bidang Keahlian:</strong> IPO &amp; Capital Markets Advisory · Financial Modelling &amp; Engineering · Corporate Finance &amp; Refinancing · Cash Flow &amp; Corporate Liquidity · SOE Financial Governance · Corporate Accounting &amp; Reporting · Board of Directors &amp; Commissioners Oversight · Energy Sector Financial Strategy
+                                </p>
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Pendidikan:</strong> Master’s Degree Accounting &amp; Business Management │ The University of Salford, UK (2002–2004) · Bachelor of Accounting &amp; Finance │ Universitas Sumatera Utara (1987–1990)
+                                </p>
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Executive Track Record:</strong> President Director, PT Transportasi Gas Indonesia (2013–2015) · Finance Director, PT Transportasi Gas Indonesia (2009–2013) · Senior Finance Expert, PT PGN (Persero) Tbk (2015–2016) · Head of Accounting &amp; Budgeting Division, PGN (1991–2005) · Equity Partner, HKW &amp; Partner Law Firm (2017–present)
+                                </p>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                <!-- Praktisi 7 -->
+                
+<!-- Praktisi 7 -->
+
+<!-- Praktisi 7 -->
+<div class="group relative flex flex-col bg-white rounded-3xl p-8 lg:p-10 border border-slate-900/5 shadow-premium hover:shadow-premium-hover transition-all duration-500 reveal-item">
+    
+    <!-- Top section: Photo and Titles -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+        <div class="w-24 h-24 rounded-full overflow-hidden shrink-0 border border-slate-900/5 ring-4 ring-white shadow-sm relative">
+            <div class="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:scale-110 transition-transform duration-700"><i class="fa-solid fa-camera text-2xl"></i></div>
+            <div class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10 pointer-events-none"></div>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-medium text-slate-900 mb-2 tracking-tight">Abidin Daeng Patompo</h3>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-sage-500 font-semibold mb-2 leading-relaxed">Commissioner &amp; Former President Director, PT Masmindo Dwi Area · General Manager Corporate Affairs &amp; Government Relations</p>
+            <p class="text-[13px] text-slate-500 font-medium leading-relaxed">PT Masmindo Dwi Area (Gold Mining) · PT Petrosea Tbk · PT POSB Infrastructure Indonesia</p>
+        </div>
+    </div>
+
+    <!-- Bio -->
+    <p class="text-[14px] text-slate-600 leading-relaxed mb-8 font-light">
+        There is a type of expertise that cannot be taught in a classroom it can only be earned through three decades of direct immersion in mining operations, permit bureaucracy, land acquisition negotiations, and government relations lobbying at the national level. Abidin Daeng Patompo possesses all of it. Over 30 years at PT Petrosea Tbk a multidisciplinary engineering, construction, and mining company he built a career from project level to General Manager of Corporate Affairs, Logistics &amp; Export-Import, architecting the government relations and permit management systems that became the operational backbone of the company. The executive peak was reached when he was entrusted as President Director of PT Masmindo Dwi Area a gold mining company before now serving as Commissioner and providing Board-level strategic oversight.
+    </p>
+
+    <!-- Achievements -->
+    <div class="mb-8">
+        <h4 class="text-[11px] font-bold text-slate-900 uppercase tracking-[0.15em] mb-5 flex items-center gap-4">
+            Pencapaian Strategis <span class="h-px bg-slate-900/10 flex-1"></span>
+        </h4>
+        <ul class="text-[13px] text-slate-600 leading-relaxed font-light space-y-3 list-disc pl-5">
+            <li>Entrusted as President Director of PT Masmindo Dwi Area a gold mining company leading full corporate operations from October 2021 to April 2023, before transitioning to the strategic oversight role as Commissioner</li><li>Served as General Manager Corporate Affairs, Logistics &amp; Export-Import at PT Petrosea Tbk (2017–2021) simultaneously leading all government relations, permits, external relations, community relations, industrial relations, CSR, logistics, and customs functions</li><li>Built PT Petrosea's Government Relations &amp; External Affairs system over 7 years (2010–2017) becoming the architect of the company's relationships with regulators, regional governments, and communities across complex mining operation zones</li><li>Recognized as Expert Council Member of ASPINDO (Indonesian Mining Services Association) 2024–2027 formal recognition of knowledge depth and strategic contribution to the national mining services sector</li><li>Built his career from Project General Affairs at KPC Sangatta (1991), BHP Cilegon (1993), and Surabaya Power Station (1995) field experience that formed a deep understanding of project management, logistics, and site operations</li>
+        </ul>
+    </div>
+
+    <!-- Accordion / Details -->
+    <div class="mt-auto pt-6 border-t border-slate-900/5">
+        <button class="accordion-toggle w-full flex justify-between items-center text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-900 hover:text-sage-500 transition-colors py-2 group/btn" aria-expanded="false">
+            <span>Detail Keahlian &amp; Track Record</span>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content" aria-expanded="false">
+            <div class="accordion-inner pt-6 pb-2 space-y-4">
+                
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Bidang Keahlian:</strong> Government &amp; Regulatory Relations · Corporate Affairs &amp; Permits · Land Acquisition Management · Community &amp; Industrial Relations · Logistics &amp; Export-Import · Mining Project Management · Corporate Social Responsibility · Board &amp; Governance Advisory
+                                </p>
+                                <p class="text-[13px] text-slate-600 leading-relaxed font-light">
+                                    <strong class="font-medium text-slate-900">Executive Track Record:</strong> Commissioner, PT Masmindo Dwi Area – Gold Mining (2023–present) · President Director, PT Masmindo Dwi Area (2021–2023) · GM Corporate Affairs, Logistics &amp; Exim, PT Petrosea Tbk (2017–2021) · Government Relations &amp; External Affairs Manager, PT Petrosea (2010–2017) · Director, PT POSB Infrastructure Indonesia (2020–2021)
+                                </p>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
             </div>
         </div>
@@ -525,23 +668,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Philosophy Box -->
-                <div class="bg-gray-50 border border-gray-100 p-8 rounded-2xl shadow-sm relative overflow-hidden lg:col-span-3 reveal-item">
-                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-secondary/10 rounded-full"></div>
+                <div class="bg-surface-soft border border-customBorder-default p-8 rounded-2xl shadow-sm relative overflow-hidden lg:col-span-3 reveal-item">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-sage-500/10 rounded-full"></div>
                     <div class="relative z-10 grid md:grid-cols-3 gap-8 items-center">
-                        <div class="md:col-span-1 text-center md:text-left border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0 md:pr-8">
-                            <div class="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary text-3xl mb-4 mx-auto md:mx-0 shadow-inner">
+                        <div class="md:col-span-1 text-center md:text-left border-b md:border-b-0 md:border-r border-customBorder-default pb-6 md:pb-0 md:pr-8">
+                            <div class="w-16 h-16 bg-sage-500/20 rounded-2xl flex items-center justify-center text-sage-500 text-3xl mb-4 mx-auto md:mx-0 shadow-inner">
                                 <i class="fa-solid fa-leaf"></i>
                             </div>
-                            <h3 class="text-3xl font-bold text-gray-900 font-serif italic mb-2">Philosophy</h3>
-                            <p class="text-secondary font-bold uppercase tracking-widest text-sm">of Amarta</p>
+                            <h3 class="text-3xl font-medium text-slate-900 font-display italic mb-2">Philosophy</h3>
+                            <p class="text-sage-500 font-medium uppercase tracking-widest text-sm">of Amarta</p>
                         </div>
                         <div class="md:col-span-2 space-y-4">
-                            <p class="text-gray-600 text-[15px] leading-relaxed">
-                                Nama Amarta Artha mengandung makna filosofis yang mendalam. <strong class="text-primary hover:text-secondary transition cursor-default">Amarta</strong> melambangkan sumber kehidupan yang abadi, sebuah simbol dari pengetahuan yang terus berkembang dan memberikan manfaat lintas generasi. <strong class="text-primary hover:text-secondary transition cursor-default">Artha</strong> melambangkan nilai, kesejahteraan, dan kemakmuran yang dihasilkan dari usaha yang bermakna.
+                            <p class="text-slate-500 text-[15px] leading-relaxed">
+                                Nama Amarta Artha mengandung makna filosofis yang mendalam. <strong class="text-slate-900 hover:text-sage-500 transition cursor-default">Amarta</strong> melambangkan sumber kehidupan yang abadi, sebuah simbol dari pengetahuan yang terus berkembang dan memberikan manfaat lintas generasi. <strong class="text-slate-900 hover:text-sage-500 transition cursor-default">Artha</strong> melambangkan nilai, kesejahteraan, dan kemakmuran yang dihasilkan dari usaha yang bermakna.
                             </p>
-                            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden">
-                                <div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
-                                <p class="text-gray-800 font-medium text-[15px] leading-relaxed">
+                            <div class="bg-white p-5 rounded-xl border border-customBorder-default shadow-sm relative overflow-hidden">
+                                <div class="absolute left-0 top-0 bottom-0 w-1 bg-sage-500"></div>
+                                <p class="text-slate-800 font-medium text-[15px] leading-relaxed">
                                     Bersama-sama, keduanya merepresentasikan sebuah prinsip fundamental: <br>Bahwa pengetahuan yang dipandu oleh integritas akan selalu menghasilkan nilai yang berkelanjutan bagi masyarakat. Filosofi ini menjadi fondasi dari setiap program, riset, dan kolaborasi yang kami bangun.
                                 </p>
                             </div>
@@ -550,13 +693,13 @@
                 </div>
 
                 <!-- Visi -->
-                <div class="bg-primary text-white p-8 rounded-2xl shadow-lg relative overflow-hidden lg:col-span-1 flex flex-col justify-center reveal-item delay-100">
+                <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-lg relative overflow-hidden lg:col-span-1 flex flex-col justify-center reveal-item delay-100">
                     <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-bl-full z-0"></div>
                     <div class="relative z-10 text-center">
                         <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6 backdrop-blur-sm border border-white/20">
                             <i class="fa-solid fa-eye"></i>
                         </div>
-                        <h3 class="text-3xl font-bold font-serif mb-4">Visi Kami</h3>
+                        <h3 class="text-3xl font-medium font-display mb-4">Visi Kami</h3>
                         <p class="text-blue-50 leading-relaxed font-light">
                             Menjadi pusat kepemimpinan strategis dan pengetahuan global dari Indonesia yang membangun human capital dan sumber daya manusia yang berintegritas, menghasilkan riset berbasis data, dan menciptakan nilai berkelanjutan bagi organisasi dan masyarakat.
                         </p>
@@ -564,38 +707,38 @@
                 </div>
 
                 <!-- Misi -->
-                <div class="bg-white border border-gray-100 p-8 md:p-10 rounded-2xl shadow-sm relative overflow-hidden lg:col-span-2 reveal-item delay-200">
+                <div class="bg-white border border-customBorder-default p-8 md:p-10 rounded-2xl shadow-sm relative overflow-hidden lg:col-span-2 reveal-item delay-200">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-primary text-xl shadow-sm">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-slate-900 text-xl shadow-sm">
                             <i class="fa-solid fa-bullseye"></i>
                         </div>
-                        <h3 class="text-3xl font-bold font-serif text-gray-900">Misi Kami</h3>
+                        <h3 class="text-3xl font-medium font-display text-slate-900">Misi Kami</h3>
                     </div>
 
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
-                            <div class="bg-secondary/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <span class="font-bold text-secondary text-sm">1</span>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-surface-soft transition border border-transparent hover:border-customBorder-default">
+                            <div class="bg-sage-500/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="font-medium text-sage-500 text-sm">1</span>
                             </div>
-                            <span class="text-gray-700 text-sm leading-relaxed">Menyelenggarakan pengembangan kepemimpinan masa depan melalui program pengembangan kapasitas dan program pembelajaran strategis yang membentuk pemimpin visioner, adaptif, dan berintegritas.</span>
+                            <span class="text-slate-600 text-sm leading-relaxed">Menyelenggarakan pengembangan kepemimpinan masa depan melalui program pengembangan kapasitas dan program pembelajaran strategis yang membentuk pemimpin visioner, adaptif, dan berintegritas.</span>
                         </li>
-                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
-                            <div class="bg-secondary/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <span class="font-bold text-secondary text-sm">2</span>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-surface-soft transition border border-transparent hover:border-customBorder-default">
+                            <div class="bg-sage-500/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="font-medium text-sage-500 text-sm">2</span>
                             </div>
-                            <span class="text-gray-700 text-sm leading-relaxed">Mendorong transformasi organisasi melalui penguatan human capital, sumber daya manusia, dan tata kelola institusional serta strategi manajemen yang berkelanjutan.</span>
+                            <span class="text-slate-600 text-sm leading-relaxed">Mendorong transformasi organisasi melalui penguatan human capital, sumber daya manusia, dan tata kelola institusional serta strategi manajemen yang berkelanjutan.</span>
                         </li>
-                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
-                            <div class="bg-secondary/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <span class="font-bold text-secondary text-sm">3</span>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-surface-soft transition border border-transparent hover:border-customBorder-default">
+                            <div class="bg-sage-500/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="font-medium text-sage-500 text-sm">3</span>
                             </div>
-                            <span class="text-gray-700 text-sm leading-relaxed">Menyelenggarakan pemetaan mendalam dalam pengambilan keputusan organisasi dan kebijakan institusional untuk menghasilkan riset strategis berbasis data.</span>
+                            <span class="text-slate-600 text-sm leading-relaxed">Menyelenggarakan pemetaan mendalam dalam pengambilan keputusan organisasi dan kebijakan institusional untuk menghasilkan riset strategis berbasis data.</span>
                         </li>
-                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
-                            <div class="bg-secondary/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <span class="font-bold text-secondary text-sm">4</span>
+                        <li class="flex items-start gap-4 p-3 rounded-xl hover:bg-surface-soft transition border border-transparent hover:border-customBorder-default">
+                            <div class="bg-sage-500/20 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="font-medium text-sage-500 text-sm">4</span>
                             </div>
-                            <span class="text-gray-700 text-sm leading-relaxed">Menanamkan integritas institusional melalui kepemimpinan profetik dan kerja sama lintas sektor sebagai fondasi utama dalam kepemimpinan dan tata kelola.</span>
+                            <span class="text-slate-600 text-sm leading-relaxed">Menanamkan integritas institusional melalui kepemimpinan profetik dan kerja sama lintas sektor sebagai fondasi utama dalam kepemimpinan dan tata kelola.</span>
                         </li>
                     </ul>
                 </div>
@@ -604,106 +747,97 @@
     </section>
 
     <!-- 6. WHY ORGANIZATIONS TRUST AMARTA? -->
-    <section class="section-padding bg-gray-50 relative border-t border-gray-100">
+    <section class="section-padding bg-surface-soft relative border-t border-customBorder-default">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center mb-12 reveal-item">
-                <div class="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary text-2xl mx-auto mb-6 shadow-inner">
-                    <i class="fa-solid fa-ribbon"></i>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">Why Organizations Trust Amarta?</h2>
-                <p class="text-gray-600">Alasan utama mitra strategis memilih kami sebagai katalisator transformasi organisasi.</p>
+                <h2 class="text-3xl md:text-4xl font-display font-medium text-slate-900 mb-4">Why Organizations Trust Amarta?</h2>
+                <p class="text-slate-500">Alasan utama mitra strategis memilih kami sebagai katalisator transformasi organisasi.</p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Point 1 -->
-                <div class="card-premium text-center reveal-item flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-primary mb-4 shadow-sm">
+                <div class="bg-surface-base rounded-2xl border border-customBorder-default p-8 hover:-translate-y-1 transition-all duration-300 text-center reveal-item flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-slate-900 mb-4 shadow-sm">
                         <i class="fa-solid fa-chart-pie"></i>
                     </div>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Data Driven Insight</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">Setiap rekomendasi kami didasarkan pada analisis data dan pendekatan metodologis yang kuat.</p>
+                    <h4 class="font-medium text-slate-900 text-lg mb-2">Data Driven Insight</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Setiap rekomendasi kami didasarkan pada analisis data dan pendekatan metodologis yang kuat.</p>
                 </div>
                 <!-- Point 2 -->
-                <div class="card-premium text-center reveal-item delay-100 flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-primary mb-4 shadow-sm">
+                <div class="bg-surface-base rounded-2xl border border-customBorder-default p-8 hover:-translate-y-1 transition-all duration-300 text-center reveal-item delay-100 flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-slate-900 mb-4 shadow-sm">
                         <i class="fa-solid fa-chess-knight"></i>
                     </div>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Strategic Thinking</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">Pendekatan kami menggabungkan perspektif akademik dengan pengalaman praktis di dunia industri.</p>
+                    <h4 class="font-medium text-slate-900 text-lg mb-2">Strategic Thinking</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Pendekatan kami menggabungkan perspektif akademik dengan pengalaman praktis di dunia industri.</p>
                 </div>
                 <!-- Point 3 -->
-                <div class="card-premium text-center reveal-item delay-200 flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-primary mb-4 shadow-sm">
+                <div class="bg-surface-base rounded-2xl border border-customBorder-default p-8 hover:-translate-y-1 transition-all duration-300 text-center reveal-item delay-200 flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-slate-900 mb-4 shadow-sm">
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Experienced Experts</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">Tim ahli kami memiliki pengalaman luas dalam berbagai sektor organisasi dan kebijakan publik.</p>
+                    <h4 class="font-medium text-slate-900 text-lg mb-2">Experienced Experts</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Tim ahli kami memiliki pengalaman luas dalam berbagai sektor organisasi dan kebijakan publik.</p>
                 </div>
                 <!-- Point 4 -->
-                <div class="card-premium text-center reveal-item delay-300 flex flex-col items-center">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-primary mb-4 shadow-sm">
+                <div class="bg-surface-base rounded-2xl border border-customBorder-default p-8 hover:-translate-y-1 transition-all duration-300 text-center reveal-item delay-300 flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-slate-900 mb-4 shadow-sm">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Real Organizational Impact</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">Program kami dirancang untuk menghasilkan perubahan nyata dalam kinerja dan budaya organisasi.</p>
+                    <h4 class="font-medium text-slate-900 text-lg mb-2">Real Organizational Impact</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Program kami dirancang untuk menghasilkan perubahan nyata dalam kinerja dan budaya organisasi.</p>
                 </div>
-            </div>
-            
-            <div class="mt-12 text-center reveal-item delay-400">
-                <a href="index.html#kontak" class="inline-flex items-center justify-center bg-primary text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-blue-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                    Mulai Kolaborasi <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer (Pertahankan dari asli) -->
-    <footer id="kontak" class="pt-16 pb-8 bg-gray-950 text-white relative border-t border-gray-900">
+    <footer id="kontak" class="pt-16 pb-8 bg-slate-900 text-white relative border-t border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-8 mb-16">
                 <!-- Left: Title & Institute Info -->
                 <div class="lg:col-span-5">
-                    <span class="text-secondary font-bold tracking-widest uppercase text-xs mb-3 block">Hubungi Kami</span>
-                    <h2 class="text-4xl lg:text-5xl font-serif font-bold text-white mb-8 leading-tight">Mulai <br/><span class="text-gray-400">Percakapan</span></h2>
+                    <span class="text-sage-500 font-medium tracking-widest uppercase text-xs mb-3 block">Hubungi Kami</span>
+                    <h2 class="text-4xl lg:text-5xl font-display font-medium text-white mb-8 leading-tight">Mulai <br><span class="text-slate-400">Percakapan</span></h2>
                     
                     <div>
-                        <h3 class="text-xl font-serif font-bold mb-1">Amarta Artha Institute</h3>
-                        <a href="https://amartaartha.id" class="inline-block text-gray-400 hover:text-secondary transition text-base font-medium border-b border-gray-800 hover:border-secondary pb-1">amartaartha.id</a>
+                        <h3 class="text-xl font-display font-medium mb-1">Amarta Artha Institute</h3>
+                        <a href="https://amartaartha.id" class="inline-block text-slate-400 hover:text-sage-500 transition text-base font-medium border-b border-slate-700 hover:border-sage-500 pb-1">amartaartha.id</a>
                     </div>
                 </div>
 
                 <!-- Right: Contacts -->
                 <div class="lg:col-span-6 lg:col-start-7 space-y-8">
                     <!-- Koordinator Institusi -->
-                    <div class="border-l border-gray-800 pl-6 hover:border-secondary transition duration-500">
-                        <span class="text-gray-500 uppercase tracking-widest text-xs font-semibold mb-2 block">Koordinator Institusi</span>
-                        <h4 class="text-xl font-bold text-gray-100 mb-3">Dr. Hendra Kusuma Wardana, S.H., M.H., CEH</h4>
-                        <div class="flex flex-col xl:flex-row xl:items-center text-gray-400 gap-2 xl:gap-5 text-sm font-medium">
-                            <a href="https://linkedin.com/in/hkwcode" class="hover:text-secondary transition flex items-center"><i class="fa-brands fa-linkedin mr-2 text-gray-600"></i>linkedin.com/in/hkwcode</a>
-                            <span class="hidden xl:inline text-gray-800">&bull;</span>
-                            <a href="https://hendrakusumawardana.id" class="hover:text-secondary transition flex items-center"><i class="fa-solid fa-globe mr-2 text-gray-600"></i>hendrakusumawardana.id</a>
+                    <div class="border-l border-slate-700 pl-6 hover:border-sage-500 transition duration-500">
+                        <span class="text-slate-400 uppercase tracking-widest text-xs font-medium mb-2 block">Koordinator Institusi</span>
+                        <h4 class="text-xl font-medium text-gray-100 mb-3">Dr. Hendra Kusuma Wardana, S.H., M.H., CEH</h4>
+                        <div class="flex flex-col xl:flex-row xl:items-center text-slate-400 gap-2 xl:gap-5 text-sm font-medium">
+                            <a href="https://linkedin.com/in/hkwcode" class="hover:text-sage-500 transition flex items-center"><i class="fa-brands fa-linkedin mr-2 text-slate-500"></i>linkedin.com/in/hkwcode</a>
+                            <span class="hidden xl:inline text-slate-800">•</span>
+                            <a href="https://hendrakusumawardana.id" class="hover:text-sage-500 transition flex items-center"><i class="fa-solid fa-globe mr-2 text-slate-500"></i>hendrakusumawardana.id</a>
                         </div>
                     </div>
 
                     <!-- Layanan Cybersecurity & IT -->
-                    <div class="border-l border-gray-800 pl-6 hover:border-secondary transition duration-500">
-                        <span class="text-gray-500 uppercase tracking-widest text-xs font-semibold mb-2 block">Layanan Cybersecurity & IT</span>
-                        <h4 class="text-xl font-bold text-gray-100 mb-3">Ali Hasbullah, M.B.A. (CISSP, CISA)</h4>
-                        <div class="flex flex-col xl:flex-row xl:items-center text-gray-400 gap-2 xl:gap-5 text-sm font-medium">
-                            <a href="tel:+628990033303" class="hover:text-secondary transition flex items-center"><i class="fa-solid fa-phone mr-2 text-gray-600"></i>+62 899 003 3303</a>
-                            <span class="hidden xl:inline text-gray-800">&bull;</span>
-                            <a href="mailto:ali.hasbullah@gmail.com" class="hover:text-secondary transition flex items-center"><i class="fa-solid fa-envelope mr-2 text-gray-600"></i>ali.hasbullah@gmail.com</a>
+                    <div class="border-l border-slate-700 pl-6 hover:border-sage-500 transition duration-500">
+                        <span class="text-slate-400 uppercase tracking-widest text-xs font-medium mb-2 block">Layanan Cybersecurity &amp; IT</span>
+                        <h4 class="text-xl font-medium text-gray-100 mb-3">Ali Hasbullah, M.B.A. (CISSP, CISA)</h4>
+                        <div class="flex flex-col xl:flex-row xl:items-center text-slate-400 gap-2 xl:gap-5 text-sm font-medium">
+                            <a href="tel:+628990033303" class="hover:text-sage-500 transition flex items-center"><i class="fa-solid fa-phone mr-2 text-slate-500"></i>+62 899 003 3303</a>
+                            <span class="hidden xl:inline text-slate-800">•</span>
+                            <a href="mailto:ali.hasbullah@gmail.com" class="hover:text-sage-500 transition flex items-center"><i class="fa-solid fa-envelope mr-2 text-slate-500"></i>ali.hasbullah@gmail.com</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Bottom Line -->
-            <div class="pt-6 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs sm:text-sm gap-4">
-                <span class="font-medium">&copy; 2026 Amarta Artha Institute. All rights reserved.</span>
+            <div class="pt-6 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-slate-400 text-xs sm:text-sm gap-4">
+                <span class="font-medium">© 2026 Amarta Artha Institute. All rights reserved.</span>
                 <div class="flex gap-4 sm:gap-6">
-                    <a href="#" class="hover:text-secondary transition">Kebijakan Privasi</a>
-                    <a href="#" class="hover:text-secondary transition">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-sage-500 transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-sage-500 transition">Syarat &amp; Ketentuan</a>
                 </div>
             </div>
         </div>
@@ -852,7 +986,7 @@
             toast.className = 'toast-item';
             
             // Icon selection
-            let iconClass = 'fa-solid fa-circle-check text-secondary';
+            let iconClass = 'fa-solid fa-circle-check text-sage-500';
             if (type === 'error') iconClass = 'fa-solid fa-circle-exclamation text-red-400';
             else if (type === 'info') iconClass = 'fa-solid fa-circle-info text-blue-400';
 
@@ -872,5 +1006,6 @@
             }, duration);
         };
     </script>
-</body>
-</html>
+
+
+</body></html>
