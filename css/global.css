@@ -34,7 +34,7 @@
   --section-gap:     6rem;    /* desktop */
   --section-gap-sm:  4rem;    /* mobile */
   --card-radius:     2px;     /* sengaja kecil — anti AI-slop */
-  --button-radius:   16px;
+  --button-radius:   9999px;
 
   /* Typography */
   --font-display: 'Poppins', sans-serif;
