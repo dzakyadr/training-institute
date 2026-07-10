@@ -71,11 +71,11 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-300 border-b border-customBorder-default" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+            <div class="flex justify-between items-center h-16 md:h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html">
-                        <img src="images/logonavbarfix.png" alt="Amarta Artha Institute" class="h-16 w-auto object-contain">
+                        <img src="images/logonavbarfix.png" alt="Amarta Artha Institute" class="h-10 md:h-12 w-auto object-contain">
                     </a>
                 </div>
 
@@ -160,7 +160,7 @@
             <div class="border-t border-customBorder-default divide-y divide-customBorder-default">
                 
                 <!-- Practitioner 1: Dr. Hendra -->
-                <div class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
+                <div onclick="openPractitionerDrawer(1)" class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
                     <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-surface-soft border border-customBorder-default flex items-center justify-center text-slate-400">
                         <img src="images/hkw.jpg.jpeg" alt="Dr. Hendra Kusuma Wardana" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -174,7 +174,7 @@
                 </div>
 
                 <!-- Practitioner 2: Dr. Firdaus -->
-                <div class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
+                <div onclick="openPractitionerDrawer(2)" class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
                     <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-surface-soft border border-customBorder-default flex items-center justify-center text-slate-400">
                         <img src="images/Dr. Firdaus Dewilmar.jpeg" alt="Dr. Firdaus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style="object-position: center 20%;">
                     </div>
@@ -188,7 +188,7 @@
                 </div>
 
                 <!-- Practitioner 3: Ali Hasbullah -->
-                <div class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
+                <div onclick="openPractitionerDrawer(3)" class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
                     <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-surface-soft border border-customBorder-default flex items-center justify-center text-slate-400">
                         <img src="images/Ari Hasbullah.jpg" alt="Ali Hasbullah" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -202,7 +202,7 @@
                 </div>
 
                 <!-- Practitioner 4: Harry Wibisono -->
-                <div class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
+                <div onclick="openPractitionerDrawer(4)" class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
                     <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-surface-soft border border-customBorder-default flex items-center justify-center text-slate-400">
                         <img src="images/harry wibisono.jpeg" alt="Harry Wibisono" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -216,7 +216,7 @@
                 </div>
 
                 <!-- Practitioner 5: Muhammad Wahid Sutopo -->
-                <div class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
+                <div onclick="openPractitionerDrawer(5)" class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
                     <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-surface-soft border border-customBorder-default flex items-center justify-center text-slate-400">
                         <img src="images/wahid sutopo.jpg.jpeg" alt="Muhammad Wahid Sutopo" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -230,7 +230,7 @@
                 </div>
 
                 <!-- Practitioner 6: Mangatas Panjaitan -->
-                <div class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
+                <div onclick="openPractitionerDrawer(6)" class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
                     <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-surface-soft border border-customBorder-default flex items-center justify-center text-slate-400">
                         <img src="images/mangatas.jpg.jpeg" alt="Mangatas Panjaitan" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -244,7 +244,7 @@
                 </div>
 
                 <!-- Practitioner 7: Abidin Daeng Patompo -->
-                <div class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
+                <div onclick="openPractitionerDrawer(7)" class="group py-6 flex flex-col sm:flex-row sm:items-center gap-6 cursor-pointer hover:bg-surface-soft transition-all duration-300 px-4 -mx-4 rounded-[2px]">
                     <div class="w-14 h-14 rounded-full overflow-hidden shrink-0 bg-surface-soft border border-customBorder-default flex items-center justify-center text-slate-400">
                         <img src="images/abidin daeng.png" alt="Abidin Daeng Patompo" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" style="image-rendering: -webkit-optimize-contrast;">
                     </div>
@@ -373,13 +373,13 @@
     </section>
 
     <!-- Hubungi Kami & Footer -->
-    <footer id="kontak" class="pt-16 pb-8 bg-slate-900 text-white relative border-t border-slate-800 mt-auto" data-reveal>
+    <footer id="kontak" class="pt-10 pb-6 bg-slate-900 text-white relative border-t border-slate-800 mt-auto" data-reveal>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-8 mb-16">
+            <div class="grid lg:grid-cols-12 gap-6 mb-10">
                 <!-- Left: Title & Institute Info -->
                 <div class="lg:col-span-5">
                     <span class="text-sage-500 tracking-widest uppercase text-xs mb-3 block font-bold">Hubungi Kami</span>
-                    <h2 class="font-display font-bold text-white mb-8 leading-tight text-4xl md:text-5xl">Mulai <br /><span class="text-slate-400">Percakapan</span></h2>
+                    <h2 class="font-display font-bold text-white mb-5 leading-tight text-4xl md:text-5xl">Mulai <br /><span class="text-slate-400">Percakapan</span></h2>
 
                     <div>
                         <h3 class="text-xl font-display text-white mb-1">Amarta Artha Institute</h3>
@@ -388,17 +388,17 @@
                 </div>
 
                 <!-- Right: Contacts -->
-                <div class="lg:col-span-6 lg:col-start-7 space-y-8">
+                <div class="lg:col-span-6 lg:col-start-7 space-y-5">
                     <!-- Kontak -->
                     <div class="border-l border-slate-700 pl-6 hover:border-sage-500 transition duration-500">
                         <span class="text-slate-400 uppercase tracking-widest text-xs font-medium mb-2 block">Koordinator Institusi</span>
                         <h4 class="text-xl font-medium text-gray-100 mb-3">Orlando Setya Wardana</h4>
                         <div class="flex flex-col xl:flex-row xl:items-center text-slate-400 gap-2 xl:gap-5 text-sm font-medium mb-2">
-                            <a href="mailto:orlando@amartaartha.id" class="hover:text-sage-500 transition flex items-center">
-                                <i class="fa-solid fa-envelope mr-2 text-slate-500"></i>orlando@amartaartha.id
+                            <a href="mailto:oland.wardhana55@gmail.com" class="hover:text-sage-500 transition flex items-center">
+                                <i class="fa-solid fa-envelope mr-2 text-slate-500"></i>oland.wardhana55@gmail.com
                             </a>
                             <span class="hidden xl:inline text-slate-800">&bull;</span>
-                            <a href="tel:+6287765268718" class="hover:text-sage-500 transition flex items-center">
+                            <a href="https://wa.me/6287765268718" target="_blank" class="hover:text-sage-500 transition flex items-center">
                                 <i class="fa-solid fa-phone mr-2 text-slate-500"></i>+62 877 6526 8718
                             </a>
                         </div>
@@ -414,10 +414,6 @@
             <!-- Bottom Line -->
             <div class="pt-6 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-slate-400 text-xs sm:text-sm gap-4">
                 <span class="font-medium">&copy; 2026 Amarta Artha Institute. All rights reserved.</span>
-                <div class="flex gap-4 sm:gap-6 font-medium">
-                    <a href="#" class="hover:text-sage-500 transition">Kebijakan Privasi</a>
-                    <a href="#" class="hover:text-sage-500 transition">Syarat & Ketentuan</a>
-                </div>
             </div>
         </div>
     </footer>
@@ -428,84 +424,72 @@
         <span id="pract-name-1">Dr. Hendra Kusuma Wardana, S.H., M.H., CEH</span>
         <span id="pract-subtitle-1">Doktor Hukum Summa Cum Laude &middot; Direktur SDM & Umum &middot; Business Judgment Rule Practitioner</span>
         <div id="pract-bio-1">
-            <p>Dr. Hendra Kusuma Wardana adalah salah satu profesional eksekutif paling unik di Indonesia — individu langka yang beroperasi dengan otoritas penuh di ruang sidang, ruang Direksi, dan C-suite sekaligus. Sebagai Direktur SDM &amp; Umum di PT Timah Tbk (MIND ID Group), beliau merancang salah satu pemulihan keuangan paling luar biasa dalam sejarah BUMN Indonesia: turnaround P&amp;L terverifikasi sebesar IDR 1,64 Triliun dalam satu tahun anggaran — dilakukan bersamaan dengan penanganan investigasi antikorupsi skala nasional.</p>
+            <p>Dr. Hendra Kusuma Wardana adalah salah satu profesional eksekutif paling unik di Indonesia, individu langka yang beroperasi dengan otoritas penuh di ruang sidang, ruang Direksi, dan C-suite sekaligus. Sebagai Direktur SDM &amp; Umum di PT Timah Tbk (MIND ID Group), beliau merancang salah satu pemulihan keuangan paling luar biasa dalam sejarah BUMN Indonesia: turnaround P&amp;L terverifikasi sebesar IDR 1,64 Triliun dalam satu tahun anggaran, dilakukan bersamaan dengan penanganan investigasi antikorupsi skala nasional.</p>
         </div>
         <ul id="pract-achieve-1">
-            <li>— Membukukan turnaround P&amp;L IDR 1,64 Triliun dalam 12 bulan di PT Timah Tbk (MIND ID) — mengubah kerugian IDR 450 miliar menjadi laba IDR 1,19 Triliun</li>
-            <li>— Mencapai zero asset seizures selama investigasi Tipikor &amp; TPPU terbesar dalam sejarah SOE Indonesia</li>
-            <li>— Mengangkat skor GCG sebesar 29 poin persentase di tengah krisis korporasi nasional</li>
-            <li>— Mengamankan 100% Right-of-Way sepanjang 1.046 km pipa gas nasional</li>
-            <li>— Meraih penghargaan Top Human Capital Award 2024</li>
+            <li>Membukukan turnaround P&amp;L IDR 1,64 Triliun dalam 12 bulan di PT Timah Tbk (MIND ID), mengubah kerugian IDR 450 miliar menjadi laba IDR 1,19 Triliun</li>
+            <li>Mencapai zero asset seizures selama investigasi Tipikor &amp; TPPU terbesar dalam sejarah SOE Indonesia</li>
+            <li>Mengangkat skor GCG sebesar 29 poin persentase di tengah krisis korporasi nasional</li>
+            <li>Mengamankan 100% Right-of-Way sepanjang 1.046 km pipa gas nasional</li>
+            <li>Meraih penghargaan Top Human Capital Award 2024</li>
         </ul>
         <div id="pract-skills-1">
             <p><strong>Bidang Keahlian:</strong> Business Judgment Rule &middot; Tata Kelola BUMN &middot; Hukum Korporasi &middot; CHRO &amp; Transformasi SDM &middot; Anti-Korupsi Preventif &middot; ESG &amp; Standar IFC &middot; AI-Driven HR &middot; Cybersecurity (CEH)</p>
-            <p><strong>Pendidikan:</strong> Doktor Ilmu Hukum (Dr.) Summa Cum Laude — Universitas Trisakti &middot; Magister Hukum Summa Cum Laude — Universitas Trisakti &middot; Sarjana Hukum — Universitas Mataram</p>
+            <p><strong>Pendidikan:</strong> Doktor Ilmu Hukum (Dr.) Summa Cum Laude │ Universitas Trisakti &middot; Magister Hukum Summa Cum Laude │ Universitas Trisakti &middot; Sarjana Hukum │ Universitas Mataram</p>
             <p><strong>Sertifikasi:</strong> Advokat PERADI &middot; Certified Ethical Hacker (CEH) EC-Council &middot; GRCE &middot; Sertifikasi Manajemen Risiko BUMN Level 5</p>
-        </div>
-        <div id="pract-quote-1">
-            Individu langka yang beroperasi dengan otoritas penuh di ruang sidang, ruang Direksi, dan C-suite sekaligus.
         </div>
 
         <!-- Practitioner 2 -->
         <span id="pract-name-2">Dr. Firdaus Dewilmar, S.H., M.H.</span>
         <span id="pract-subtitle-2">Doktor Ilmu Hukum &middot; Mantan Kepala Kejaksaan Tinggi &middot; Penasihat Strategis Senior</span>
         <div id="pract-bio-2">
-            <p>Ada sedikit sekali tokoh di Indonesia yang pernah menyaksikan arsitektur sistem penegakan hukum dari dalam — dan lebih sedikit lagi yang pernah memimpinnya di tingkat provinsi tertinggi. Dr. Firdaus Dewilmar adalah salah satunya. Selama lebih dari tiga dekade di Kejaksaan Agung RI, beliau mengemban posisi paling strategis dalam hirarki kejaksaan.</p>
+            <p>Ada sedikit sekali tokoh di Indonesia yang pernah menyaksikan arsitektur sistem penegakan hukum dari dalam, dan lebih sedikit lagi yang pernah memimpinnya di tingkat provinsi tertinggi. Dr. Firdaus Dewilmar adalah salah satunya. Selama lebih dari tiga dekade di Kejaksaan Agung RI, beliau mengemban posisi paling strategis dalam hirarki kejaksaan.</p>
         </div>
         <ul id="pract-achieve-2">
-            <li>— Memimpin operasional Kejaksaan Tinggi Sulawesi Selatan &amp; Sulawesi Barat</li>
-            <li>— Menjabat Sekretaris Jaksa Agung Muda Bidang Pidana Militer (SesJAMPidMil) di Kejaksaan Agung RI</li>
-            <li>— Memimpin Pusat Pendidikan &amp; Pelatihan Teknis Fungsional Kejaksaan</li>
-            <li>— Diajukan sebagai calon Penjabat Gubernur Gorontalo dan kandidat terkuat Jaksa Agung RI</li>
+            <li>Memimpin operasional Kejaksaan Tinggi Sulawesi Selatan &amp; Sulawesi Barat</li>
+            <li>Menjabat Sekretaris Jaksa Agung Muda Bidang Pidana Militer (SesJAMPidMil) di Kejaksaan Agung RI</li>
+            <li>Memimpin Pusat Pendidikan &amp; Pelatihan Teknis Fungsional Kejaksaan</li>
+            <li>Diajukan sebagai calon Penjabat Gubernur Gorontalo dan kandidat terkuat Jaksa Agung RI</li>
         </ul>
         <div id="pract-skills-2">
             <p><strong>Bidang Keahlian:</strong> Hukum Pidana Indonesia &middot; Intelijen Kejaksaan &middot; Anti-Korupsi &amp; Tipikor &middot; Kebijakan Publik Nasional &middot; Regulasi Energi &amp; ESDM &middot; Tata Kelola Institusi Negara &middot; Hukum Pidana Militer &middot; Hubungan Pemerintah &amp; Regulator</p>
             <p><strong>Posisi Strategis Nasional:</strong> Kajati Gorontalo &amp; Sulawesi Selatan–Barat &middot; SesJAMPidMil Kejaksaan Agung RI &middot; Kepala Pusdiklat Teknis Fungsional Kejagung &middot; Senior Adviser, Kementerian ESDM &amp; Otoritas Batam &middot; Kandidat Terkuat Jaksa Agung RI (KOPPAJA, 2024)</p>
-        </div>
-        <div id="pract-quote-2">
-            Ada sedikit sekali tokoh di Indonesia yang pernah menyaksikan arsitektur sistem penegakan hukum dari dalam — dan lebih sedikit lagi yang pernah memimpinnya di tingkat provinsi tertinggi.
         </div>
 
         <!-- Practitioner 3 -->
         <span id="pract-name-3">Ali Hasbullah, M.B.A.</span>
         <span id="pract-subtitle-3">CISSP &middot; CISA &middot; CCSP &middot; CIPM &middot; ISO 27001 Lead Auditor &middot; CompTIA Project+</span>
         <div id="pract-bio-3">
-            <p>Kepemimpinan keamanan siber di Indonesia saat ini dipenuhi sertifikasi dan kredensial. Yang benar-benar langka adalah praktisi yang tidak hanya memberikan advisory di tingkat Boardroom, tetapi secara personal telah menanggung akuntabilitas penuh sebagai CISO di salah satu enterprise digital terbesar Indonesia — sekaligus memiliki rigor analitis dari karier Big 4 konsultan selama hampir satu dekade.</p>
+            <p>Kepemimpinan keamanan siber di Indonesia saat ini dipenuhi sertifikasi dan kredensial. Yang benar-benar langka adalah praktisi yang tidak hanya memberikan advisory di tingkat Boardroom, tetapi secara personal telah menanggung akuntabilitas penuh sebagai CISO di salah satu enterprise digital terbesar Indonesia, sekaligus memiliki rigor analitis dari karier Big 4 konsultan selama hampir satu dekade.</p>
         </div>
         <ul id="pract-achieve-3">
-            <li>— Menjabat Acting CISO &amp; SVP Head of IT Corporate Security di Indosat Ooredoo Hutchison</li>
-            <li>— Sebagai Executive Director EY Indonesia, memberikan advisory kepada OJK, BRI, IDX, Telkomsel, Telkom, Unilever, dan Kementerian Keuangan</li>
-            <li>— Mengimplementasikan sertifikasi ISO 27001 untuk Hutchison 3 Indonesia — berhasil melewati audit PwC, ISAE 3402, dan GSMA</li>
-            <li>— Memimpin program IT SOX 404 Advisory untuk Telkomsel, Telkom, Unilever</li>
+            <li>Menjabat Acting CISO &amp; SVP Head of IT Corporate Security di Indosat Ooredoo Hutchison</li>
+            <li>Sebagai Executive Director EY Indonesia, memberikan advisory kepada OJK, BRI, IDX, Telkomsel, Telkom, Unilever, dan Kementerian Keuangan</li>
+            <li>Mengimplementasikan sertifikasi ISO 27001 untuk Hutchison 3 Indonesia, berhasil melewati audit PwC, ISAE 3402, dan GSMA</li>
+            <li>Memimpin program IT SOX 404 Advisory untuk Telkomsel, Telkom, Unilever</li>
         </ul>
         <div id="pract-skills-3">
             <p><strong>Bidang Keahlian:</strong> CISO-as-a-Service &middot; Strategi Keamanan Siber Enterprise &middot; IT Governance &amp; Assurance &middot; Kepatuhan OJK &amp; UU PDP &middot; ISO 27001:2022 &amp; NIST CSF 2.0 &middot; Due Diligence M&amp;A IT &middot; Pre-IPO IT Readiness &middot; SOC &amp; MSSP Governance</p>
             <p><strong>Sertifikasi:</strong> CISSP &middot; CISA &middot; CCSP &middot; CIPM &middot; ISO 27001 Lead Auditor &middot; CompTIA Project+</p>
-            <p><strong>Pendidikan:</strong> M.B.A. Manajemen Keuangan — Universitas Indonesia &middot; B.S. Teknik Komputer — Universitas Indonesia</p>
-        </div>
-        <div id="pract-quote-3">
-            Praktisi yang tidak hanya memberikan advisory di tingkat Boardroom, tetapi secara personal telah menanggung akuntabilitas penuh sebagai CISO di salah satu enterprise digital terbesar Indonesia.
+            <p><strong>Pendidikan:</strong> M.B.A. Manajemen Keuangan │ Universitas Indonesia &middot; B.S. Teknik Komputer │ Universitas Indonesia</p>
         </div>
 
         <!-- Practitioner 4 -->
         <span id="pract-name-4">Harry Wibisono</span>
         <span id="pract-subtitle-4">Senior Marketing Executive &middot; Independent Marketing Advisor &middot; FMCG Strategist</span>
         <div id="pract-bio-4">
-            <p>Harry Wibisono menghabiskan 28 tahun membangun kepemimpinan pasar di lapangan. Selama hampir tiga dekade di PT HM Sampoerna — afiliasi Philip Morris International — beliau bergerak melalui setiap lapisan kepemimpinan pemasaran dan penjualan yang signifikan, hingga bertanggung jawab atas tiga wilayah terbesar Indonesia: Jawa Timur, Sumatra 1, dan Jawa Tengah.</p>
+            <p>Harry Wibisono menghabiskan 28 tahun membangun kepemimpinan pasar di lapangan. Selama hampir tiga dekade di PT HM Sampoerna, afiliasi Philip Morris International, beliau bergerak melalui setiap lapisan kepemimpinan pemasaran dan penjualan yang signifikan, hingga bertanggung jawab atas tiga wilayah terbesar Indonesia: Jawa Timur, Sumatra 1, dan Jawa Tengah.</p>
         </div>
         <ul id="pract-achieve-4">
-            <li>— Meraih posisi Market Leader di Surabaya (2005) — pasar FMCG paling kompetitif di Indonesia Timur</li>
-            <li>— Mereplikasi kepemimpinan pasar di wilayah Bali &amp; Nusa Tenggara</li>
-            <li>— Meraih posisi Market Leader di Sumatra 1</li>
-            <li>— Mempertahankan keanggotaan 'Number Club' Sampoerna selama lima tahun berturut-turut</li>
-            <li>— Menyelesaikan on-the-job training internasional di 6 negara: Malaysia, Singapura, Vietnam, Hong Kong, Australia, Swiss</li>
+            <li>Meraih posisi Market Leader di Surabaya (2005), pasar FMCG paling kompetitif di Indonesia Timur</li>
+            <li>Mereplikasi kepemimpinan pasar di wilayah Bali &amp; Nusa Tenggara</li>
+            <li>Meraih posisi Market Leader di Sumatra 1</li>
+            <li>Mempertahankan keanggotaan 'Number Club' Sampoerna selama lima tahun berturut-turut</li>
+            <li>Menyelesaikan on-the-job training internasional di 6 negara: Malaysia, Singapura, Vietnam, Hong Kong, Australia, Swiss</li>
         </ul>
         <div id="pract-skills-4">
             <p><strong>Bidang Keahlian:</strong> Brand Building &amp; Market Leadership &middot; Regional Consumer Engagement &middot; Sales Force Architecture &middot; Field Marketing &amp; Distribusi &middot; Team Coaching &amp; Performance Culture &middot; UMKM &amp; SME Marketing Advisory &middot; FMCG Market Entry &amp; Expansion</p>
             <p><strong>Kontribusi:</strong> Pembicara Tetap IMA/AMA, KADIN, Rotary Club &middot; Dosen Tamu Universitas Balikpapan, Samarinda, Manado</p>
-        </div>
-        <div id="pract-quote-4">
-            Harry Wibisono menghabiskan 28 tahun membangun kepemimpinan pasar di lapangan, bergerak melalui setiap lapisan kepemimpinan pemasaran dan penjualan yang signifikan.
         </div>
 
         <!-- Practitioner 5 -->
@@ -515,19 +499,16 @@
             <p>For over two decades, Muhammad Wahid Sutopo has operated at the intersection of government policy, capital markets, and operational execution a rare combination built deliberately, not by accident. As President Director &amp; CEO of PT Penjaminan Infrastruktur Indonesia (Persero) the national infrastructure guarantee institution under the Ministry of Finance RI he led the institution that underwrites the financial viability of Indonesia's largest Public-Private Partnership (PPP) projects: toll roads, water systems, energy infrastructure, and urban transit corridors.</p>
         </div>
         <ul id="pract-achieve-5">
-            <li>— Led PT Penjaminan Infrastruktur Indonesia (Persero) for nearly 8 years establishing PT PII as the primary sovereign guarantee vehicle for National Strategic Projects (PSN)</li>
-            <li>— Architected the PPP Joint Office coordination ecosystem bridging central government, sub-national entities, and multilateral agencies</li>
-            <li>— As Director of Strategy &amp; Business Development at PGN (Persero) Tbk, defined the energy sector's strategic direction during its most critical consolidation period</li>
-            <li>— Built Indosat’s Investor Relations function from the ground up earning “Best IR” recognition from FinanceAsia and AsiaMoney</li>
-            <li>— Served as President Commissioner at PGAS Telekomunikasi Nusantara (6+ years) and PT PGN LNG Indonesia</li>
+            <li>Led PT Penjaminan Infrastruktur Indonesia (Persero) for nearly 8 years establishing PT PII as the primary sovereign guarantee vehicle for National Strategic Projects (PSN)</li>
+            <li>Architected the PPP Joint Office coordination ecosystem bridging central government, sub-national entities, and multilateral agencies</li>
+            <li>As Director of Strategy &amp; Business Development at PGN (Persero) Tbk, defined the energy sector's strategic direction during its most critical consolidation period</li>
+            <li>Built Indosat’s Investor Relations function from the ground up earning “Best IR” recognition from FinanceAsia and AsiaMoney</li>
+            <li>Served as President Commissioner at PGAS Telekomunikasi Nusantara (6+ years) and PT PGN LNG Indonesia</li>
         </ul>
         <div id="pract-skills-5">
             <p><strong>Bidang Keahlian:</strong> Infrastructure Guarantee &amp; PPP &middot; National Infrastructure Policy &middot; Development Finance &middot; Institutional Investor Relations &middot; SOE Strategy &amp; Business Transformation &middot; Multi-Stakeholder Navigation &middot; Executive Leadership &amp; Coaching &middot; Human &amp; Machine Intelligence</p>
             <p><strong>Pendidikan:</strong> Executive Education Business Analytics: Decision Making Using Data │ Cambridge Judge Business School (Emeritus), 2020 &middot; Master of Management (MM) International Business │ Institut Pengembangan Manajemen Indonesia (IPMI) &middot; Bachelor of Engineering Telecommunications &amp; Electrical Engineering │ Institut Teknologi Bandung (ITB)</p>
             <p><strong>Executive Track Record:</strong> 25+ Years SOE Executive Track Record &middot; 8 Years Leading PT PII (Persero) – Ministry of Finance RI &middot; 3 SOE Board Roles (Director &amp; Commissioner) &middot; “Best IR” FinanceAsia &amp; AsiaMoney – VP Investor Relations, Indosat &middot; Director of Strategy &amp; Business Development, PGN (Persero) Tbk</p>
-        </div>
-        <div id="pract-quote-5">
-            Muhammad Wahid Sutopo has operated at the intersection of government policy, capital markets, and operational execution.
         </div>
 
         <!-- Practitioner 6 -->
@@ -537,19 +518,16 @@
             <p>Mangatas Panjaitan is a finance executive with the DNA of a true accountant built upon a 14-year foundation at PT Perusahaan Gas Negara (PGN), reinforced by full leadership for over a decade at PT Transportasi Gas Indonesia (TGI) across roles as Commissioner, Finance Director, and President Director. A career trajectory that moved from technical accounting to the apex of corporate leadership provides a perspective rarely possessed: deep command of numbers alongside sharp strategic acumen in Board-level decision-making. His core expertise in IPO, financial modelling, and financial engineering makes him one of the most seasoned corporate finance practitioners in Indonesia's energy and infrastructure sector.</p>
         </div>
         <ul id="pract-achieve-6">
-            <li>— Led PT Transportasi Gas Indonesia (TGI) as President Director (2013–2015) PGN's strategic subsidiary managing the national gas transmission network bearing full accountability for corporate operational continuity</li>
-            <li>— Served as Finance Director of TGI for 4 years (2009–2013) leading the entire finance and administration directorate, architecting financing structures, cash flow governance, liquidity, and corporate solvency</li>
-            <li>— Built a 14+ year track record at PT Perusahaan Gas Negara (PGN) Tbk rising from Head of Accounting Section (1991) to Head of Accounting &amp; Budgeting Division (2004)</li>
-            <li>— Returned to PGN as Senior Finance Expert (2015–2016) following his tenure as TGI President Director directly accountable for the effectiveness and efficiency of the parent entity's cash flow</li>
-            <li>— Equity Partner at HKW &amp; Partner Law Firm since 2017 integrating corporate finance expertise with business law practice</li>
+            <li>Led PT Transportasi Gas Indonesia (TGI) as President Director (2013–2015) PGN's strategic subsidiary managing the national gas transmission network bearing full accountability for corporate operational continuity</li>
+            <li>Served as Finance Director of TGI for 4 years (2009–2013) leading the entire finance and administration directorate, architecting financing structures, cash flow governance, liquidity, and corporate solvency</li>
+            <li>Built a 14+ year track record at PT Perusahaan Gas Negara (PGN) Tbk rising from Head of Accounting Section (1991) to Head of Accounting &amp; Budgeting Division (2004)</li>
+            <li>Returned to PGN as Senior Finance Expert (2015–2016) following his tenure as TGI President Director directly accountable for the effectiveness and efficiency of the parent entity's cash flow</li>
+            <li>Equity Partner at HKW &amp; Partner Law Firm since 2017 integrating corporate finance expertise with business law practice</li>
         </ul>
         <div id="pract-skills-6">
             <p><strong>Bidang Keahlian:</strong> IPO &amp; Capital Markets Advisory &middot; Financial Modelling &amp; Engineering &middot; Corporate Finance &amp; Refinancing &middot; Cash Flow &amp; Corporate Liquidity &middot; SOE Financial Governance &middot; Corporate Accounting &amp; Reporting &middot; Board of Directors &amp; Commissioners Oversight &middot; Energy Sector Financial Strategy</p>
             <p><strong>Pendidikan:</strong> Master’s Degree Accounting &amp; Business Management │ The University of Salford, UK (2002–2004) &middot; Bachelor of Accounting &amp; Finance │ Universitas Sumatera Utara (1987–1990)</p>
             <p><strong>Executive Track Record:</strong> President Director, PT Transportasi Gas Indonesia (2013–2015) &middot; Finance Director, PT Transportasi Gas Indonesia (2009–2013) &middot; Senior Finance Expert, PT PGN (Persero) Tbk (2015–2016) &middot; Head of Accounting &amp; Budgeting Division, PGN (1991–2005) &middot; Equity Partner, HKW &amp; Partner Law Firm (2017–present)</p>
-        </div>
-        <div id="pract-quote-6">
-            A career trajectory that moved from technical accounting to the apex of corporate leadership provides deep command of numbers alongside sharp strategic acumen.
         </div>
 
         <!-- Practitioner 7 -->
@@ -559,18 +537,15 @@
             <p>There is a type of expertise that cannot be taught in a classroom it can only be earned through three decades of direct immersion in mining operations, permit bureaucracy, land acquisition negotiations, and government relations lobbying at the national level. Abidin Daeng Patompo possesses all of it. Over 30 years at PT Petrosea Tbk a multidisciplinary engineering, construction, and mining company he built a career from project level to General Manager of Corporate Affairs, Logistics &amp; Export-Import, architecting the government relations and permit management systems that became the operational backbone of the company. The executive peak was reached when he was entrusted as President Director of PT Masmindo Dwi Area a gold mining company before now serving as Commissioner and providing Board-level strategic oversight.</p>
         </div>
         <ul id="pract-achieve-7">
-            <li>— Entrusted as President Director of PT Masmindo Dwi Area a gold mining company leading full corporate operations from October 2021 to April 2023, before transitioning to the strategic oversight role as Commissioner</li>
-            <li>— Served as General Manager Corporate Affairs, Logistics &amp; Export-Import at PT Petrosea Tbk (2017–2021) simultaneously leading all government relations, permits, external relations, community relations, industrial relations, CSR, logistics, and customs functions</li>
-            <li>— Built PT Petrosea's Government Relations &amp; External Affairs system over 7 years (2010–2017) becoming the architect of the company's relationships with regulators, regional governments, and communities across complex mining operation zones</li>
-            <li>— Recognized as Expert Council Member of ASPINDO (Indonesian Mining Services Association) 2024–2027 formal recognition of knowledge depth and strategic contribution to the national mining services sector</li>
-            <li>— Built his career from Project General Affairs at KPC Sangatta (1991), BHP Cilegon (1993), and Surabaya Power Station (1995) field experience that formed a deep understanding of project management, logistics, and site operations</li>
+            <li>Entrusted as President Director of PT Masmindo Dwi Area a gold mining company leading full corporate operations from October 2021 to April 2023, before transitioning to the strategic oversight role as Commissioner</li>
+            <li>Served as General Manager Corporate Affairs, Logistics &amp; Export-Import at PT Petrosea Tbk (2017–2021) simultaneously leading all government relations, permits, external relations, community relations, industrial relations, CSR, logistics, and customs functions</li>
+            <li>Built PT Petrosea's Government Relations &amp; External Affairs system over 7 years (2010–2017) becoming the architect of the company's relationships with regulators, regional governments, and communities across complex mining operation zones</li>
+            <li>Recognized as Expert Council Member of ASPINDO (Indonesian Mining Services Association) 2024–2027 formal recognition of knowledge depth and strategic contribution to the national mining services sector</li>
+            <li>Built his career from Project General Affairs at KPC Sangatta (1991), BHP Cilegon (1993), and Surabaya Power Station (1995) field experience that formed a deep understanding of project management, logistics, and site operations</li>
         </ul>
         <div id="pract-skills-7">
             <p><strong>Bidang Keahlian:</strong> Government &amp; Regulatory Relations &middot; Corporate Affairs &amp; Permits &middot; Land Acquisition Management &middot; Community &amp; Industrial Relations &middot; Logistics &amp; Export-Import &middot; Mining Project Management &middot; Corporate Social Responsibility &middot; Board &amp; Governance Advisory</p>
             <p><strong>Executive Track Record:</strong> Commissioner, PT Masmindo Dwi Area – Gold Mining (2023–present) &middot; President Director, PT Masmindo Dwi Area (2021–2023) &middot; GM Corporate Affairs, Logistics &amp; Exim, PT Petrosea Tbk (2017–2021) &middot; Government Relations &amp; External Affairs Manager, PT Petrosea (2010–2017) &middot; Director, PT POSB Infrastructure Indonesia (2020–2021)</p>
-        </div>
-        <div id="pract-quote-7">
-            There is a type of expertise that cannot be taught in a classroom it can only be earned through three decades of direct immersion in mining operations.
         </div>
     </div>
 
@@ -588,13 +563,8 @@
                 <h3 id="drawer-name" class="text-3xl md:text-4xl font-display font-semibold text-slate-900 mb-3"></h3>
                 <p id="drawer-subtitle" class="text-sm md:text-base text-sage-500 font-medium leading-relaxed"></p>
             </div>
-            
-            <div id="drawer-quote-container" class="relative pl-6 py-2 border-l-2 border-gold-500 bg-surface-soft rounded-r-[2px] hidden">
-                <span class="absolute left-1 top-0 text-3xl md:text-4xl font-display text-gold-300">“</span>
-                <p id="drawer-quote" class="text-[15px] md:text-base italic text-slate-600 font-medium leading-relaxed pl-3"></p>
-            </div>
 
-            <div>
+<div>
                 <h4 class="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-4 flex items-center gap-4">
                     Biografi <span class="h-px bg-slate-200 flex-1"></span>
                 </h4>
@@ -605,7 +575,7 @@
                 <h4 class="text-xs font-bold text-slate-900 uppercase tracking-[0.15em] mb-4 flex items-center gap-4">
                     Pencapaian Strategis <span class="h-px bg-slate-200 flex-1"></span>
                 </h4>
-                <ul id="drawer-achievements" class="text-[15px] md:text-base text-slate-600 leading-relaxed font-light space-y-4 pl-4"></ul>
+                <ul id="drawer-achievements" class="text-[15px] md:text-base text-slate-600 leading-relaxed font-light space-y-3 pl-5 list-disc"></ul>
             </div>
 
             <div>

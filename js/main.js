@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const bio = document.getElementById(`pract-bio-${practitionerId}`)?.innerHTML || '';
         const achievements = document.getElementById(`pract-achieve-${practitionerId}`)?.innerHTML || '';
         const skills = document.getElementById(`pract-skills-${practitionerId}`)?.innerHTML || '';
-        const quote = document.getElementById(`pract-quote-${practitionerId}`)?.innerHTML || '';
 
         // Populate drawer contents
         document.getElementById('drawer-name').innerText = name;
@@ -110,14 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('drawer-bio').innerHTML = bio;
         document.getElementById('drawer-achievements').innerHTML = achievements;
         document.getElementById('drawer-skills').innerHTML = skills;
-        
-        const drawerQuoteContainer = document.getElementById('drawer-quote-container');
-        if (quote && quote.trim() !== '') {
-            document.getElementById('drawer-quote').innerHTML = quote;
-            drawerQuoteContainer.classList.remove('hidden');
-        } else {
-            drawerQuoteContainer.classList.add('hidden');
-        }
 
         // Open the drawer
         drawerBackdrop.classList.add('active');

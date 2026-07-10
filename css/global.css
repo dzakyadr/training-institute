@@ -62,6 +62,10 @@
 }
 
 /* Base Body Styles */
+html {
+  background-color: #1A1F2E; /* matches footer bg-slate-900, eliminates white gap below footer on mobile */
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--surface-base);
